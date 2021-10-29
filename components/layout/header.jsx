@@ -39,6 +39,11 @@ const SubtitleStyle = styled.p`
 
 const HeaderWrapperStyle = styled.div`
   background-color: #e2dbca;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 100vw;
   padding: 5px;
   padding-top: 10px;
 `;

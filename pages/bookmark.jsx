@@ -5,7 +5,7 @@ export default function Bookmark() {
     <>
       <Head>
         {" "}
-        <title> Bookmarks</title>
+        <title>Dream Day Wedding Planner</title>
       </Head>
       <h1>Bookmarks</h1>
       <div></div>
