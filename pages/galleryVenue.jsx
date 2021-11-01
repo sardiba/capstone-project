@@ -10,10 +10,26 @@ import venuePic4 from "../public/images/venue4.jpeg";
 
 export default function GalleryVenue() {
   const venues = [
-    { cardTitle: "ELBDECK EVENT LOCATION", cardImage: venuePic1 },
-    { cardTitle: "ELBSCHMIEDE ALTONA", cardImage: venuePic2 },
-    { cardTitle: "HAMBURG WHITE HOUSE", cardImage: venuePic3 },
-    { cardTitle: "THE PALACE- CONVENTION HALL", cardImage: venuePic4 },
+    {
+      cardTitle: "ELBDECK EVENT LOCATION",
+      cardImage: venuePic1,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "ELBSCHMIEDE ALTONA",
+      cardImage: venuePic2,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "HAMBURG WHITE HOUSE",
+      cardImage: venuePic3,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "THE PALACE- CONVENTION HALL",
+      cardImage: venuePic4,
+      isBookmarked: false,
+    },
   ];
   return (
     <>

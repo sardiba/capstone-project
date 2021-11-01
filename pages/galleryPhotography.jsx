@@ -11,11 +11,31 @@ import photographyPic5 from "../public/images/photography5.jpeg";
 
 export default function GalleryPhotography() {
   const photographies = [
-    { cardTitle: "KILA PHOTOGRAPHY", cardImage: photographyPic1 },
-    { cardTitle: "ANNA DITTRICH FOTOGRAF", cardImage: photographyPic2 },
-    { cardTitle: "ALINA ATZLER FOTOGRAFIE", cardImage: photographyPic3 },
-    { cardTitle: "ALQISPH WEDDING PHOTO", cardImage: photographyPic4 },
-    { cardTitle: "LOVE LENSE PHOTOGRAPHY", cardImage: photographyPic5 },
+    {
+      cardTitle: "KILA PHOTOGRAPHY",
+      cardImage: photographyPic1,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "ANNA DITTRICH FOTOGRAF",
+      cardImage: photographyPic2,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "ALINA ATZLER FOTOGRAFIE",
+      cardImage: photographyPic3,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "ALQISPH WEDDING PHOTO",
+      cardImage: photographyPic4,
+      isBookmarked: false,
+    },
+    {
+      cardTitle: "LOVE LENSE PHOTOGRAPHY",
+      cardImage: photographyPic5,
+      isBookmarked: false,
+    },
   ];
   return (
     <>
