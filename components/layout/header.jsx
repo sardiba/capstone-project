@@ -20,8 +20,7 @@ export default function Header({ title, subtitle }) {
 }
 
 const TitleStyle = styled.h1`
-  color: #854848;
-  opacity: 70%;
+  color: rgba(133, 72, 72, 0.7);
   text-align: center;
   font-family: "parisienne", "roboto";
   font-size: 42px;
