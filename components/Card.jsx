@@ -3,11 +3,17 @@ import styled from "styled-components";
 import bookmarkLight from "../public/icons/bookmark-light.svg";
 import bookmarkDark from "../public/icons/bookmark-dark.svg";
 import Image from "next/image";
+import { useVendors } from "../context/VendorContext";
 
-export default function Card({ cardTitle, cardImage }) {
-  const [isBookmarked, setIsBookmarked] = useState(false);
+export default function Card({ cardTitle, cardImage, isBookmarked, type }) {
+  //   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [vendors, setVendors] = useVendors();
+
   const handleClick = () => {
-    setIsBookmarked(!isBookmarked);
+    // setIsBookmarked(!isBookmarked);
+    console.log(vendors);
+    const bookmarkedCard = vendors.find((vendor) => vendor.cardTitle);
+    console.log("**CLICKED CARD**", bookmarkedCard.isBookmarked);
   };
   const toggle = isBookmarked ? bookmarkDark : bookmarkLight;
   return (
