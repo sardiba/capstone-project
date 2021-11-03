@@ -6,14 +6,22 @@ import Image from "next/image";
 import { useVendors } from "../context/VendorContext";
 
 export default function Card({ cardTitle, cardImage, isBookmarked, type }) {
-  //   const [isBookmarked, setIsBookmarked] = useState(false);
   const [vendors, setVendors] = useVendors();
 
   const handleClick = () => {
-    // setIsBookmarked(!isBookmarked);
-    console.log(vendors);
-    const bookmarkedCard = vendors.find((vendor) => vendor.cardTitle);
-    console.log("**CLICKED CARD**", bookmarkedCard.isBookmarked);
+    console.log(cardTitle);
+    const clickedIndex = (element) => element.cardTitle == cardTitle;
+    const cardIndex = vendors.findIndex(clickedIndex);
+    console.log("**CLICKED CARD INDEX**", cardIndex);
+    const newVendors = [...vendors];
+    //Toggle the bookmark with ternary operation
+    newVendors[cardIndex].isBookmarked
+      ? (newVendors[cardIndex].isBookmarked = false)
+      : (newVendors[cardIndex].isBookmarked = true);
+
+    setVendors([...newVendors]);
+
+    console.log("**NEW ARRAY**", newVendors);
   };
   const toggle = isBookmarked ? bookmarkDark : bookmarkLight;
   return (

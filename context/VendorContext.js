@@ -18,14 +18,12 @@ export function VendorProvider({ children }) {
   const [vendors, setVendors] = useState([]);
 
   useEffect(() => {
-    console.log("****** USE EFFECT *******");
-
     setVendors([
       {
         cardTitle: "ELBDECK EVENT LOCATION",
         cardImage: venuePic1,
         type: "venue",
-        isBookmarked: false,
+        isBookmarked: true,
       },
       {
         cardTitle: "ELBSCHMIEDE ALTONA",
@@ -73,7 +71,7 @@ export function VendorProvider({ children }) {
         cardTitle: "LOVE LENSE PHOTOGRAPHY",
         cardImage: photographyPic5,
         type: "photography",
-        isBookmarked: false,
+        isBookmarked: true,
       },
     ]);
   }, []);
