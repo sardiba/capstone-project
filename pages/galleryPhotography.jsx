@@ -4,46 +4,9 @@ import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
 import Card from "../components/Card";
 import { useVendors } from "../context/VendorContext";
-// import photographyPic1 from "../public/images/photography1.jpeg";
-// import photographyPic2 from "../public/images/photography2.jpeg";
-// import photographyPic3 from "../public/images/photography3.jpeg";
-// import photographyPic4 from "../public/images/photography4.jpeg";
-// import photographyPic5 from "../public/images/photography5.jpeg";
 
 export default function GalleryPhotography() {
   const [vendors, setVendors] = useVendors();
-  //   const photographies = [
-  //     {
-  //       cardTitle: "KILA PHOTOGRAPHY",
-  //       cardImage: photographyPic1,
-  //       type: "photography",
-  //       isBookmarked: false,
-  //     },
-  //     {
-  //       cardTitle: "ANNA DITTRICH FOTOGRAF",
-  //       cardImage: photographyPic2,
-  //       type: "photography",
-  //       isBookmarked: false,
-  //     },
-  //     {
-  //       cardTitle: "ALINA ATZLER FOTOGRAFIE",
-  //       cardImage: photographyPic3,
-  //       type: "photography",
-  //       isBookmarked: false,
-  //     },
-  //     {
-  //       cardTitle: "ALQISPH WEDDING PHOTO",
-  //       cardImage: photographyPic4,
-  //       type: "photography",
-  //       isBookmarked: false,
-  //     },
-  //     {
-  //       cardTitle: "LOVE LENSE PHOTOGRAPHY",
-  //       cardImage: photographyPic5,
-  //       type: "photography",
-  //       isBookmarked: false,
-  //     },
-  // ];
   return (
     <>
       <Head>

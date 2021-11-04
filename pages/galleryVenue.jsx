@@ -5,39 +5,8 @@ import Card from "../components/Card";
 import arrowLeft from "../public/icons/arrow-left.svg";
 import { useVendors } from "../context/VendorContext";
 
-// import venuePic1 from "../public/images/venue1.jpg";
-// import venuePic2 from "../public/images/venue2.jpeg";
-// import venuePic3 from "../public/images/venue3.jpeg";
-// import venuePic4 from "../public/images/venue4.jpeg";
-
 export default function GalleryVenue() {
   const [vendors, setVendors] = useVendors();
-  // const venues = [
-  //   {
-  //     cardTitle: "ELBDECK EVENT LOCATION",
-  //     cardImage: venuePic1,
-  //     type: "venue",
-  //     isBookmarked: false,
-  //   },
-  //   {
-  //     cardTitle: "ELBSCHMIEDE ALTONA",
-  //     cardImage: venuePic2,
-  //     type: "venue",
-  //     isBookmarked: false,
-  //   },
-  //   {
-  //     cardTitle: "HAMBURG WHITE HOUSE",
-  //     cardImage: venuePic3,
-  //     type: "venue",
-  //     isBookmarked: false,
-  //   },
-  //   {
-  //     cardTitle: "THE PALACE- CONVENTION HALL",
-  //     cardImage: venuePic4,
-  //     type: "venue",
-  //     isBookmarked: false,
-  //   },
-  // ];
   return (
     <>
       <Head>
