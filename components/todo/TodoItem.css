@@ -1,8 +1,0 @@
-.TodoItem {
-  color: skyblue;
-  cursor: pointer;
-}
-
-.TodoItem--is-done {
-  text-decoration: line-through;
-}

@@ -2,8 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
+import { useState } from "react";
+import { TodoList } from "../components/todo/TodoList";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { CreateTitle } from "../components/cardTitle/createTitle";
+import { useLocalStorageState } from "../utils/localStorage";
 
 export default function GalleryVenue() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [title, setTitle] = useLocalStorageState("title", {});
   return (
     <>
       <Head>
@@ -16,34 +24,48 @@ export default function GalleryVenue() {
       </LinkStyle>
       <HeadingStyle>Holly Matrimony</HeadingStyle>
       <LableStyle>Date</LableStyle>
+
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <div>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
+        </div>
       </DivStyle>
       <LableStyle>Venue</LableStyle>
       <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <h3>
+          <CreateTitle
+            onCreate={(name) => {
+              setTitle({ name });
+            }}
+          />{" "}
+        </h3>
+        <div>
+          <TodoList />{" "}
+        </div>
       </DivStyle>
       <LableStyle>Photography</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <div></div>
       </DivStyle>
       <LableStyle>Decoration and Flowers</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <div></div>
       </DivStyle>
       <LableStyle>Bridal and Makeup</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <div></div>
       </DivStyle>
       <LableStyle>Catering and Cake</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div className="cardContentWrapper"></div>
+        <div></div>
       </DivStyle>
       <PufferPageBottom />
     </>
@@ -76,7 +98,7 @@ const LinkStyle = styled.a`
   display: block;
   position: fixed;
   top: 90px;
-  width: 14vw;
+  width: 50px;
   margin-top: 10px;
   margin-left: 5px;
   padding: 15px;
@@ -93,7 +115,7 @@ const LinkStyle = styled.a`
 const DivStyle = styled.div`
   display: block;
   width: 80vw;
-  height: 100px;
+  height: 220px;
   background-color: #e8e5df;
   border-radius: 7px;
   margin-bottom: 30px;
@@ -106,26 +128,6 @@ const DivStyle = styled.div`
     color: #5c5c5c;
     text-align: center;
     padding-top: 15px;
-  }
-  .cardContentWrapper {
-    display: grid;
-    grid-template-columns: 100px 100px;
-    gap: 50px;
-    padding-left: 35px;
-  }
-  div {
-    display: grid;
-    gap: 5px;
-  }
-  a {
-    width: 80px;
-    font-size: 12px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #854848;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   }
 `;
 const PufferPageBottom = styled.div`

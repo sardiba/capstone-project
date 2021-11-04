@@ -1,6 +1,5 @@
 import { CreateTodo } from "./CreateTodo";
 import { TodoItem } from "./TodoItem";
-import { useEffect } from "react";
 import { useLocalStorageState } from "../../utils/localStorage";
 
 export const TodoList = () => {
@@ -17,7 +16,7 @@ export const TodoList = () => {
 
   return (
     <>
-      <ul>{todoItems}</ul>
+      <div>{todoItems}</div>
       <CreateTodo
         onCreate={(name) => {
           setTodos([...todos, { id: todos.length, name }]);

@@ -1,29 +1,32 @@
 import styled from "styled-components";
 
-export const CreateTodo = ({ onCreate }) => {
+export const CreateTitle = ({ onCreate }) => {
   return (
     <FormStyle
       onSubmit={(event) => {
-        const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!!
-        onCreate(newTodo);
+        const titleName = event.target.elements.newTitle.value; //event.target >> always the place where event take place!!
+        onCreate(newTitle);
         event.preventDefault();
       }}
     >
-      <TextInputStyle type="text" name="newTodo" />
-      <SubmitButtonStyle type="submit" value="add" />
+      <TextInputStyle
+        type="text"
+        name="newTitle"
+        placeholder="enter vendor name"
+      />
+      <SubmitButtonStyle type="submit" value="save" />
     </FormStyle>
   );
 };
-
 const FormStyle = styled.form`
   font-size: 10px;
   font-family: "open sans", "roboto";
+  color: #5c5c5c;
 `;
 const TextInputStyle = styled.input`
   font-size: 12px;
   width: 180px;
   margin: 10px;
-  margin-left: 35px;
 `;
 const SubmitButtonStyle = styled.input`
   all: unset;
