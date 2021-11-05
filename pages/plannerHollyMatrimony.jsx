@@ -2,15 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import { useState } from "react";
 import { TodoList } from "../components/todo/TodoList";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { CreateTitle } from "../components/cardTitle/createTitle";
+import { CreateTitle } from "../components/cardTitle/CreateTitle";
 import { useLocalStorageState } from "../utils/localStorage";
+import DateCard from "../components/cards/DateCard";
 
-export default function GalleryVenue() {
-  const [startDate, setStartDate] = useState(new Date());
+export default function plannerHollyMatrimony() {
   const [title, setTitle] = useLocalStorageState("title", {});
   return (
     <>
@@ -23,17 +20,7 @@ export default function GalleryVenue() {
         <Image src={arrowLeft} alt="back" width={30} height={30} />
       </LinkStyle>
       <HeadingStyle>Holly Matrimony</HeadingStyle>
-      <LableStyle>Date</LableStyle>
-
-      <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-          />
-        </div>
-      </DivStyle>
+      <DateCard />
       <LableStyle>Venue</LableStyle>
       <DivStyle>
         <h3>
@@ -83,9 +70,10 @@ const HeadingStyle = styled.h1`
   margin-top: 45px;
   margin-bottom: 45px;
 `;
+
 const LableStyle = styled.h2`
   font-family: "open sans", "roboto";
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 20px;
   width: 50vw;
   background-color: #dac1c1;
@@ -97,6 +85,7 @@ const LableStyle = styled.h2`
 const LinkStyle = styled.a`
   display: block;
   position: fixed;
+  z-index: 10;
   top: 90px;
   width: 50px;
   margin-top: 10px;
@@ -113,6 +102,7 @@ const LinkStyle = styled.a`
 `;
 
 const DivStyle = styled.div`
+  position: relative;
   display: block;
   width: 80vw;
   height: 220px;
@@ -130,6 +120,7 @@ const DivStyle = styled.div`
     padding-top: 15px;
   }
 `;
+
 const PufferPageBottom = styled.div`
   height: 8vh;
 `;

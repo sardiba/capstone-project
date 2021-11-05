@@ -4,7 +4,7 @@ export const CreateTodo = ({ onCreate }) => {
   return (
     <FormStyle
       onSubmit={(event) => {
-        const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!!
+        const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!
         onCreate(newTodo);
         event.preventDefault();
       }}
@@ -16,7 +16,7 @@ export const CreateTodo = ({ onCreate }) => {
 };
 
 const FormStyle = styled.form`
-  font-size: 10px;
+  font-size: 12px;
   font-family: "open sans", "roboto";
 `;
 const TextInputStyle = styled.input`
