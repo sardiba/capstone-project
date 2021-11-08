@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import Card from "../components/Card";
+import VendorCard from "../components/cards/vendorCard";
 import { useVendors } from "../context/VendorContext";
 
 export default function Bookmark() {
@@ -20,7 +20,7 @@ export default function Bookmark() {
             (vendor) => vendor.isBookmarked == true && vendor.type == "venue"
           )
           .map((vendor) => (
-            <Card
+            <VendorCard
               cardTitle={vendor.cardTitle}
               cardImage={vendor.cardImage}
               type={vendor.type}
@@ -36,7 +36,7 @@ export default function Bookmark() {
               vendor.isBookmarked == true && vendor.type == "photography"
           )
           .map((vendor) => (
-            <Card
+            <VendorCard
               cardTitle={vendor.cardTitle}
               cardImage={vendor.cardImage}
               type={vendor.type}

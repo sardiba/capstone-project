@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import Card from "../components/Card";
+import VendorCard from "../components/Card";
 import { useVendors } from "../context/VendorContext";
 
 export default function GalleryPhotography() {
@@ -21,7 +21,7 @@ export default function GalleryPhotography() {
       {vendors
         .filter((vendor) => vendor.type == "photography")
         .map((vendor) => (
-          <Card
+          <VendorCard
             key={vendor.cardTitle}
             cardTitle={vendor.cardTitle}
             cardImage={vendor.cardImage}

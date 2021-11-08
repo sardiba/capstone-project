@@ -1,11 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
-import bookmarkLight from "../public/icons/bookmark-light.svg";
-import bookmarkDark from "../public/icons/bookmark-dark.svg";
+import bookmarkLight from "../../public/icons/bookmark-light.svg";
+import bookmarkDark from "../../public/icons/bookmark-dark.svg";
 import Image from "next/image";
-import { useVendors } from "../context/VendorContext";
+import { useVendors } from "../../context/VendorContext";
 
-export default function Card({ cardTitle, cardImage, isBookmarked, type }) {
+export default function VendorCard({
+  cardTitle,
+  cardImage,
+  isBookmarked,
+  type,
+}) {
   const [vendors, setVendors] = useVendors();
 
   const handleClick = () => {
