@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import VendorCard from "../components/Card";
+import VendorCard from "../components/cards/vendorCard";
 import { useVendors } from "../context/VendorContext";
 
 export default function GalleryPhotography() {

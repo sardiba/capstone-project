@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
-import VendorCard from "../components/Card";
+import VendorCard from "../components/cards/vendorCard";
 import arrowLeft from "../public/icons/arrow-left.svg";
 import { useVendors } from "../context/VendorContext";
 
