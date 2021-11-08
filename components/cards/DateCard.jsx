@@ -17,7 +17,6 @@ export default function DateCard() {
   // const [isFlipped, setIsFlipped] = useState(false);
   return (
     <>
-      <LableStyle>Date</LableStyle>
       <DivStyle className="startCard">
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
         <ButtonWrapper1>
@@ -47,17 +46,6 @@ export default function DateCard() {
     </>
   );
 }
-
-const LableStyle = styled.h2`
-  font-family: "open sans", "roboto";
-  font-size: 12px;
-  margin-left: 20px;
-  width: 50vw;
-  background-color: #dac1c1;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-`;
 
 const DivStyle = styled.div`
   position: relative;

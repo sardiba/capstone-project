@@ -6,6 +6,7 @@ import { TodoList } from "../components/todo/TodoList";
 import { CreateTitle } from "../components/cardTitle/CreateTitle";
 import { useLocalStorageState } from "../utils/localStorage";
 import DateCard from "../components/cards/DateCard";
+import VendorPlannerCard from "../components/cards/VendorPlannerCard";
 
 export default function plannerHollyMatrimony() {
   const [title, setTitle] = useLocalStorageState("title", {});
@@ -20,39 +21,29 @@ export default function plannerHollyMatrimony() {
         <Image src={arrowLeft} alt="back" width={30} height={30} />
       </LinkStyle>
       <HeadingStyle>Holly Matrimony</HeadingStyle>
+      <LableStyle>Date</LableStyle>
       <DateCard />
       <LableStyle>Venue</LableStyle>
-      <DivStyle>
-        <h3>
-          <CreateTitle
-            onCreate={(name) => {
-              setTitle({ name });
-            }}
-          />{" "}
-        </h3>
-        <div>
-          <TodoList />{" "}
-        </div>
-      </DivStyle>
+      <VendorPlannerCard />
       <LableStyle>Photography</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div></div>
+        <VendorPlannerCard />
       </DivStyle>
       <LableStyle>Decoration and Flowers</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div></div>
+        <VendorPlannerCard />
       </DivStyle>
       <LableStyle>Bridal and Makeup</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div></div>
+        <VendorPlannerCard />
       </DivStyle>
       <LableStyle>Catering and Cake</LableStyle>
       <DivStyle>
         {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <div></div>
+        <VendorPlannerCard />
       </DivStyle>
       <PufferPageBottom />
     </>
