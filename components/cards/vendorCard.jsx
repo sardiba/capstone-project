@@ -14,7 +14,6 @@ export default function VendorCard({
   const [vendors, setVendors] = useVendors();
 
   const handleClick = () => {
-    console.log(cardTitle);
     const clickedIndex = (element) => element.cardTitle == cardTitle;
     const cardIndex = vendors.findIndex(clickedIndex);
     console.log("**CLICKED CARD INDEX**", cardIndex);
@@ -25,12 +24,10 @@ export default function VendorCard({
       : (newVendors[cardIndex].isBookmarked = true);
 
     setVendors([...newVendors]);
-
-    console.log("**NEW ARRAY**", newVendors);
   };
   const toggle = isBookmarked ? bookmarkDark : bookmarkLight;
   return (
-    <DivStyle>
+    <CardWrapper>
       <BookmarkButtonStyle onClick={handleClick}>
         <Image src={toggle} alt="bookmark" width={30} height={30} />
       </BookmarkButtonStyle>
@@ -43,7 +40,7 @@ export default function VendorCard({
           <a href="">Contact</a>
         </div>
       </div>
-    </DivStyle>
+    </CardWrapper>
   );
 }
 
@@ -55,7 +52,7 @@ const BookmarkButtonStyle = styled.button`
   left: 70vw;
 `;
 
-const DivStyle = styled.div`
+const CardWrapper = styled.section`
   display: block;
   position: relative;
   width: 80vw;

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import VendorCard from "../components/cards/vendorCard";
+import Vendor from "../components/Vendor";
 import { useVendors } from "../context/VendorContext";
 
 export default function Bookmark() {
@@ -13,37 +13,8 @@ export default function Bookmark() {
       </Head>
       <PufferPageTop />
       <HeadingStyle>Bookmarks</HeadingStyle>
-      <div>
-        <LableStyle>Venue</LableStyle>
-        {vendors
-          .filter(
-            (vendor) => vendor.isBookmarked == true && vendor.type == "venue"
-          )
-          .map((vendor) => (
-            <VendorCard
-              cardTitle={vendor.cardTitle}
-              cardImage={vendor.cardImage}
-              type={vendor.type}
-              isBookmarked={vendor.isBookmarked}
-            />
-          ))}
-      </div>
-      <div>
-        <LableStyle>Photography</LableStyle>
-        {vendors
-          .filter(
-            (vendor) =>
-              vendor.isBookmarked == true && vendor.type == "photography"
-          )
-          .map((vendor) => (
-            <VendorCard
-              cardTitle={vendor.cardTitle}
-              cardImage={vendor.cardImage}
-              type={vendor.type}
-              isBookmarked={vendor.isBookmarked}
-            />
-          ))}
-      </div>
+      <Vendor title="Venue" type="venue" vendors={vendors} />
+      <Vendor title="Photography" type="photography" vendors={vendors} />
       <PufferPageBottom />
     </>
   );
@@ -59,17 +30,6 @@ const HeadingStyle = styled.h1`
   text-align: center;
   margin-top: 45px;
   margin-bottom: 45px;
-`;
-
-const LableStyle = styled.h2`
-  font-family: "open sans", "roboto";
-  font-size: 14px;
-  margin-left: 20px;
-  width: 50vw;
-  background-color: #dac1c1;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
 `;
 
 const PufferPageBottom = styled.div`
