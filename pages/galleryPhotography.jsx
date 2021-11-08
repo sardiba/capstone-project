@@ -22,6 +22,7 @@ export default function GalleryPhotography() {
         .filter((vendor) => vendor.type == "photography")
         .map((vendor) => (
           <Card
+            key={vendor.cardTitle}
             cardTitle={vendor.cardTitle}
             cardImage={vendor.cardImage}
             type={vendor.type}

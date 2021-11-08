@@ -22,6 +22,7 @@ export default function GalleryVenue() {
         .filter((vendor) => vendor.type == "venue")
         .map((vendor) => (
           <Card
+            key={vendor.cardTitle}
             cardTitle={vendor.cardTitle}
             cardImage={vendor.cardImage}
             type={vendor.type}
