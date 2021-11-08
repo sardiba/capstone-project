@@ -14,13 +14,10 @@ export default function DateCard() {
     day: "numeric",
   };
 
-  // const [isFlipped, setIsFlipped] = useState(false);
   return (
     <>
       <DivStyle className="startCard">
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
         <ButtonWrapper1>
-          {/* onClick={() => setIsFlipped((isFlipped) => !isFlipped)} */}
           <EditButton>
             <Image src={editIcon} alt="edit" width={40} height={40} />
           </EditButton>
@@ -28,7 +25,6 @@ export default function DateCard() {
         </ButtonWrapper1>
       </DivStyle>
       <DivStyle className="editCard">
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
         <DatePickerWrapper>
           <p>pick your date here:</p>
           <DatePicker
@@ -36,9 +32,7 @@ export default function DateCard() {
             onChange={(date) => setStartDate(date)}
           />
         </DatePickerWrapper>
-        <ButtonWrapper2>
-          <SaveButton>save</SaveButton>
-        </ButtonWrapper2>
+        <SaveButton>save</SaveButton>
       </DivStyle>
       <DivStyle className="displayCard">
         <DateButton>{startDate.toLocaleDateString("en", options)}</DateButton>
@@ -86,30 +80,23 @@ const DatePickerWrapper = styled.div`
   font-family: "open sans", "roboto";
   margin-left: 23%;
   padding-top: 5px;
+  opacity: 70%;
   p {
-    opacity: 70%;
     font-size: 12px;
   }
 `;
 
 const SaveButton = styled.button`
   all: unset;
-  margin-top: 45px;
-  font-size: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  font-size: 10px;
   background-color: #854848;
   color: #ffffff;
   padding: 5px 20px 5px 20px;
   border-radius: 3px;
-`;
-
-const ButtonWrapper2 = styled.div`
-  position: absolute;
-  top: 30%;
-  left: 38%;
-  opacity: 70%;
-  p {
-    margin: 0px;
-  }
 `;
 
 const DateButton = styled.button`

@@ -16,7 +16,7 @@ export const CreateTodo = ({ onCreate }) => {
 };
 
 const FormStyle = styled.form`
-  font-size: 12px;
+  font-size: 10px;
   font-family: "open sans", "roboto";
 `;
 const TextInputStyle = styled.input`

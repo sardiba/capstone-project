@@ -2,8 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import { TodoList } from "../components/todo/TodoList";
-import { CreateTitle } from "../components/cardTitle/CreateTitle";
 import { useLocalStorageState } from "../utils/localStorage";
 import DateCard from "../components/cards/DateCard";
 import VendorPlannerCard from "../components/cards/VendorPlannerCard";
@@ -26,25 +24,9 @@ export default function plannerHollyMatrimony() {
       <LableStyle>Venue</LableStyle>
       <VendorPlannerCard />
       <LableStyle>Photography</LableStyle>
-      <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <VendorPlannerCard />
-      </DivStyle>
       <LableStyle>Decoration and Flowers</LableStyle>
-      <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <VendorPlannerCard />
-      </DivStyle>
       <LableStyle>Bridal and Makeup</LableStyle>
-      <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <VendorPlannerCard />
-      </DivStyle>
       <LableStyle>Catering and Cake</LableStyle>
-      <DivStyle>
-        {/* <h3>ELBDECK EVENT LOCATION</h3> */}
-        <VendorPlannerCard />
-      </DivStyle>
       <PufferPageBottom />
     </>
   );
@@ -89,26 +71,6 @@ const LinkStyle = styled.a`
   &:active {
     background-color: #6d3b3b;
     transform: scale(1.2);
-  }
-`;
-
-const DivStyle = styled.div`
-  position: relative;
-  display: block;
-  width: 80vw;
-  height: 220px;
-  background-color: #e8e5df;
-  border-radius: 7px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
-  h3 {
-    font-family: "open sans", "roboto";
-    font-size: 14px;
-    color: #5c5c5c;
-    text-align: center;
-    padding-top: 15px;
   }
 `;
 

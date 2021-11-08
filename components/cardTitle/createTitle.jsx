@@ -4,7 +4,7 @@ export const CreateTitle = ({ onCreate }) => {
   return (
     <FormStyle
       onSubmit={(event) => {
-        const titleName = event.target.elements.newTitle.value; //event.target >> always the place where event take place!!
+        const newTitle = event.target.elements.newTitle.value; //event.target >> always the place where event take place!!
         onCreate(newTitle);
         event.preventDefault();
       }}
