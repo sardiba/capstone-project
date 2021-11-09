@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styled from "styled-components";
-import Countdown from "./Countdown";
+import Countdown from "../components/Countdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
