@@ -7,43 +7,55 @@ import styled from "styled-components";
 
 export default function DateCard() {
   const [startDate, setStartDate] = useState(new Date());
+  const [editMode, setEditMode] = useState(false);
+  const [displayMode, setDisplayMode] = useState(false);
   const options = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
+  const turnOnEditMode = () => {
+    setEditMode(true);
+    setDisplayMode(false);
+  };
+  const turnOnDisplayMode = () => {
+    setDisplayMode(true);
+    setEditMode(false);
+  };
+  const cardClassNameEdit = displayMode ? "inactive" : "";
+  // const cardClassNameDisplay = editMode ? "inactive" : "";
   return (
     <>
-      <DivStyle className="startCard">
-        <ButtonWrapper1>
-          <EditButton>
+      <CardWrapper className={cardClassNameEdit}>
+        <ButtonWrapper className={editMode ? "inactive" : "active"}>
+          <EditButton onClick={turnOnEditMode}>
             <Image src={editIcon} alt="edit" width={40} height={40} />
           </EditButton>
           <p>add</p>
-        </ButtonWrapper1>
-      </DivStyle>
-      <DivStyle className="editCard">
-        <DatePickerWrapper>
-          <p>pick your date here:</p>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-          />
-        </DatePickerWrapper>
-        <SaveButton>save</SaveButton>
-      </DivStyle>
-      <DivStyle className="displayCard">
-        <DateButton>{startDate.toLocaleDateString("en", options)}</DateButton>
-      </DivStyle>
+        </ButtonWrapper>
+        <div className={editMode ? "active" : "inactive"}>
+          <DatePickerWrapper>
+            <p>pick your date here:</p>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
+          </DatePickerWrapper>
+          <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
+        </div>
+      </CardWrapper>
+      <CardWrapper className={displayMode ? "active" : "inactive"}>
+        <DateButton onClick={turnOnEditMode}>
+          {startDate.toLocaleDateString("en", options)}
+        </DateButton>
+      </CardWrapper>
     </>
   );
 }
 
-const DivStyle = styled.div`
+const CardWrapper = styled.section`
   position: relative;
-  display: block;
   width: 80vw;
   height: 120px;
   background-color: #e8e5df;
@@ -66,7 +78,7 @@ const EditButton = styled.button`
   all: unset;
 `;
 
-const ButtonWrapper1 = styled.div`
+const ButtonWrapper = styled.div`
   position: absolute;
   top: 25%;
   left: 43%;

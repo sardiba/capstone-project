@@ -1,6 +1,7 @@
 import { CreateTodo } from "./CreateTodo";
 import { TodoItem } from "./TodoItem";
 import { useLocalStorageState } from "../../utils/localStorage";
+import { v4 as uuidv4 } from "uuid";
 
 export const TodoList = () => {
   //useLocalStorageState >> custom Hook function
@@ -15,7 +16,8 @@ export const TodoList = () => {
       <div>{todoItems}</div>
       <CreateTodo
         onCreate={(name) => {
-          setTodos([...todos, { id: todos.length, name }]);
+          console.log("**add new id**", name);
+          setTodos([...todos, { id: uuidv4(), name }]);
         }}
       />
     </>

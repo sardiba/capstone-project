@@ -1,13 +1,24 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 export const CreateTodo = ({ onCreate }) => {
+  const [newTodoItemValue, setNewTodoItemValue] = useState("");
+  // const handleNewTodoItemOnChange = (event) => {
+  //   event.preventDefault();
+  //   setNewTodoItemValue(event.target.value);
+  // };
   return (
     <FormStyle
+      value={newTodoItemValue}
       onSubmit={(event) => {
-        const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!
-        onCreate(newTodo);
         event.preventDefault();
+        setNewTodoItemValue("");
+
+        const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!
+
+        onCreate(newTodo);
       }}
+      // onChange={handleNewTodoItemOnChange}
     >
       <TextInputStyle type="text" name="newTodo" />
       <SubmitButtonStyle type="submit" value="add" />

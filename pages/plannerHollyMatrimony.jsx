@@ -24,6 +24,7 @@ export default function plannerHollyMatrimony() {
       <LableStyle>Venue</LableStyle>
       <VendorPlannerCard />
       <LableStyle>Photography</LableStyle>
+      <VendorPlannerCard />
       <LableStyle>Decoration and Flowers</LableStyle>
       <LableStyle>Bridal and Makeup</LableStyle>
       <LableStyle>Catering and Cake</LableStyle>

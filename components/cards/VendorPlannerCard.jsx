@@ -3,45 +3,51 @@ import editIcon from "../../public/icons/edit.svg";
 import { CreateTitle } from "../cardTitle/createTitle";
 import { TodoList } from "../todo/TodoList";
 import styled from "styled-components";
+import { useState } from "react";
 import { useLocalStorageState } from "../../utils/localStorage";
 
 export default function VendorPlannerCard() {
+  const [editMode, setEditMode] = useState(false);
   //   const [cardTitle, setCardTitle] = useLocalStorageState("card title", {});
   //   const vendorCardTitle = cardTitle.map(({ name }) => {
   //     return name;
   //   });
+  const turnOnEditMode = () => {
+    setEditMode(true);
+    // setDisplayMode(false);
+  };
   return (
     <>
-      <DivStyle className="startCard">
-        <ButtonWrapper1>
-          <EditButton>
+      <CardWrapper>
+        <ButtonWrapper className={editMode ? "inactive" : "active"}>
+          <EditButton onClick={turnOnEditMode}>
             <Image src={editIcon} alt="edit" width={40} height={40} />
           </EditButton>
           <p>add</p>
-        </ButtonWrapper1>
-      </DivStyle>
-      <DivStyle class="editCard">
-        {/* <CreateTitle
+        </ButtonWrapper>
+        <div className={editMode ? "active" : "inactive"}>
+          {/* <CreateTitle
           onCreate={(name) => {
             setCardTitle({ id: name, name });
           }}
         />
         <h3>{vendorCardTitle}</h3> */}
-        <TodoList />
-        <SaveButton>save</SaveButton>
-      </DivStyle>
-      <DivStyle class="displayCard">
+          <TodoList />
+          <SaveButton>save</SaveButton>
+        </div>
+      </CardWrapper>
+      <CardWrapper>
         <TodoButton>VENDOR</TodoButton>
-      </DivStyle>
+      </CardWrapper>
     </>
   );
 }
 
-const DivStyle = styled.div`
-  /* position: relative; */
+const CardWrapper = styled.section`
+  position: relative;
   display: block;
   width: 80vw;
-  height: 210px;
+  height: 200px;
   background-color: #e8e5df;
   border-radius: 7px;
   margin-top: 30px;
@@ -62,8 +68,8 @@ const EditButton = styled.button`
   all: unset;
 `;
 
-const ButtonWrapper1 = styled.div`
-  /* position: absolute; */
+const ButtonWrapper = styled.div`
+  position: absolute;
   top: 35%;
   left: 43%;
   opacity: 50%;
