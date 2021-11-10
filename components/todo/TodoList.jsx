@@ -6,9 +6,12 @@ import { v4 as uuidv4 } from "uuid";
 export const TodoList = () => {
   //useLocalStorageState >> custom Hook function
   const [todos, setTodos] = useLocalStorageState("todos", []);
-
+  const deleteTodo = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id != id); // new array consists of undeleted todos
+    setTodos(updatedTodos);
+  };
   const todoItems = todos.map(({ id, name }) => {
-    return <TodoItem key={id} name={name} id={id} />;
+    return <TodoItem key={id} name={name} id={id} deleteTodo={deleteTodo} />;
   });
 
   return (

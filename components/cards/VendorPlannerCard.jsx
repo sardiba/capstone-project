@@ -1,5 +1,6 @@
 import Image from "next/image";
 import editIcon from "../../public/icons/edit.svg";
+import { Line, Circle } from "rc-progress";
 import { CreateTitle } from "../cardTitle/createTitle";
 import { TodoList } from "../todo/TodoList";
 import styled from "styled-components";
@@ -8,17 +9,23 @@ import { useLocalStorageState } from "../../utils/localStorage";
 
 export default function VendorPlannerCard() {
   const [editMode, setEditMode] = useState(false);
+  const [displayMode, setDisplayMode] = useState(false);
   //   const [cardTitle, setCardTitle] = useLocalStorageState("card title", {});
   //   const vendorCardTitle = cardTitle.map(({ name }) => {
   //     return name;
   //   });
   const turnOnEditMode = () => {
     setEditMode(true);
-    // setDisplayMode(false);
+    setDisplayMode(false);
   };
+  const turnOnDisplayMode = () => {
+    setDisplayMode(true);
+    setEditMode(false);
+  };
+
   return (
     <>
-      <CardWrapper>
+      <CardWrapper className={displayMode ? "inactive" : "active"}>
         <ButtonWrapper className={editMode ? "inactive" : "active"}>
           <EditButton onClick={turnOnEditMode}>
             <Image src={editIcon} alt="edit" width={40} height={40} />
@@ -33,11 +40,21 @@ export default function VendorPlannerCard() {
         />
         <h3>{vendorCardTitle}</h3> */}
           <TodoList />
-          <SaveButton>save</SaveButton>
+          <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
         </div>
       </CardWrapper>
-      <CardWrapper>
-        <TodoButton>VENDOR</TodoButton>
+      <CardWrapper className={displayMode ? "active" : "inactive"}>
+        <TodoButton onClick={turnOnEditMode}>
+          <ProgressBarWrapper>
+            <Line
+              percent="80"
+              strokeWidth="5"
+              trailWidth="5"
+              strokeColor="#854848"
+              trailColor="#ffffff"
+            />
+          </ProgressBarWrapper>
+        </TodoButton>
       </CardWrapper>
     </>
   );
@@ -45,7 +62,6 @@ export default function VendorPlannerCard() {
 
 const CardWrapper = styled.section`
   position: relative;
-  display: block;
   width: 80vw;
   height: 200px;
   background-color: #e8e5df;
@@ -100,4 +116,9 @@ const TodoButton = styled.button`
   margin-left: auto;
   padding-top: 45px;
   color: #5c5c5c;
+`;
+
+const ProgressBarWrapper = styled.div`
+  width: 60vw;
+  height: 10px;
 `;

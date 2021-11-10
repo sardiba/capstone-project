@@ -4,19 +4,17 @@ import Image from "next/image";
 import { useLocalStorageState } from "../../utils/localStorage";
 import deleteIcon from "../../public/icons/delete.svg";
 
-export const TodoItem = ({ name, id }) => {
+export const TodoItem = ({ name, id, deleteTodo }) => {
   const [isDone, setIsDone] = useLocalStorageState(
     `todo-id-done : ${id}`,
     false
   );
-  const [todos, setTodos] = useLocalStorageState("todos", []);
   const toggleClick = () => {
     setIsDone(!isDone);
   };
-  const deleteTodo = (event) => {
-    event.preventDefault();
-    const updatedTodos = todos.filter((todo) => todo.name != name); // new array consists of undeleted todos
-    setTodos(updatedTodos);
+
+  const handleClick = () => {
+    deleteTodo(id);
   };
   const listClassName = isDone ? "TodoItem TodoItem--is-done" : "TodoItem";
 
@@ -24,12 +22,12 @@ export const TodoItem = ({ name, id }) => {
     <FormStyle>
       <TodoWrapper>
         <span onClick={toggleClick}>
-          <input type="checkbox" id="name" name="name" />
+          <input type="checkbox" id="name" name="name" checked={isDone} />
         </span>
         <span onClick={toggleClick} className={listClassName}>
           <LabelStyle htmlFor="name">{name}</LabelStyle>
         </span>
-        <ButtonStyle onClick={deleteTodo}>
+        <ButtonStyle type="button" onClick={handleClick}>
           <Image src={deleteIcon} alt="delete" width={15} height={15} />
         </ButtonStyle>
       </TodoWrapper>

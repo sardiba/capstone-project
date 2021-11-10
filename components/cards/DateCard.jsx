@@ -92,8 +92,8 @@ const DatePickerWrapper = styled.div`
   font-family: "open sans", "roboto";
   margin-left: 23%;
   padding-top: 5px;
-  opacity: 70%;
   p {
+    opacity: 70%;
     font-size: 12px;
   }
 `;

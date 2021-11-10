@@ -26,8 +26,11 @@ export default function plannerHollyMatrimony() {
       <LableStyle>Photography</LableStyle>
       <VendorPlannerCard />
       <LableStyle>Decoration and Flowers</LableStyle>
+      <VendorPlannerCard />
       <LableStyle>Bridal and Makeup</LableStyle>
+      <VendorPlannerCard />
       <LableStyle>Catering and Cake</LableStyle>
+      <VendorPlannerCard />
       <PufferPageBottom />
     </>
   );

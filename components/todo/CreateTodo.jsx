@@ -3,10 +3,6 @@ import styled from "styled-components";
 
 export const CreateTodo = ({ onCreate }) => {
   const [newTodoItemValue, setNewTodoItemValue] = useState("");
-  // const handleNewTodoItemOnChange = (event) => {
-  //   event.preventDefault();
-  //   setNewTodoItemValue(event.target.value);
-  // };
   return (
     <FormStyle
       value={newTodoItemValue}
@@ -18,7 +14,6 @@ export const CreateTodo = ({ onCreate }) => {
 
         onCreate(newTodo);
       }}
-      // onChange={handleNewTodoItemOnChange}
     >
       <TextInputStyle type="text" name="newTodo" />
       <SubmitButtonStyle type="submit" value="add" />
