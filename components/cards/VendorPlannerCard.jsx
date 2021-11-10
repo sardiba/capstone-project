@@ -7,6 +7,10 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useLocalStorageState } from "../../utils/localStorage";
 
+export const calculatePercent = (value) => {
+  return value * 100;
+};
+
 export default function VendorPlannerCard() {
   const [editMode, setEditMode] = useState(false);
   const [displayMode, setDisplayMode] = useState(false);
@@ -23,6 +27,8 @@ export default function VendorPlannerCard() {
     setEditMode(false);
   };
 
+  const percent = calculatePercent(3 / 5);
+
   return (
     <>
       <CardWrapper className={displayMode ? "inactive" : "active"}>
@@ -38,7 +44,7 @@ export default function VendorPlannerCard() {
             setCardTitle({ id: name, name });
           }}
         />
-        <h3>{vendorCardTitle}</h3> */}
+        <h3>{CardTitle}</h3> */}
           <TodoList />
           <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
         </div>
@@ -47,7 +53,7 @@ export default function VendorPlannerCard() {
         <TodoButton onClick={turnOnEditMode}>
           <ProgressBarWrapper>
             <Line
-              percent="80"
+              percent={percent}
               strokeWidth="5"
               trailWidth="5"
               strokeColor="#854848"

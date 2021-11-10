@@ -10,6 +10,12 @@ export const TodoList = () => {
     const updatedTodos = todos.filter((todo) => todo.id != id); // new array consists of undeleted todos
     setTodos(updatedTodos);
   };
+
+  // const todoCounter = () => {
+  //   const todoIsDone = todos.filter((todo) => todo.isDone); // new array consists of undeleted todos
+  //   console.log(todoIsDone);
+  // };
+
   const todoItems = todos.map(({ id, name }) => {
     return <TodoItem key={id} name={name} id={id} deleteTodo={deleteTodo} />;
   });
@@ -19,10 +25,10 @@ export const TodoList = () => {
       <div>{todoItems}</div>
       <CreateTodo
         onCreate={(name) => {
-          console.log("**add new id**", name);
           setTodos([...todos, { id: uuidv4(), name }]);
         }}
       />
+      {/* <div>{todoCounter}</div> */}
     </>
   );
 };

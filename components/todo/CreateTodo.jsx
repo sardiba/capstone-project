@@ -2,16 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export const CreateTodo = ({ onCreate }) => {
-  const [newTodoItemValue, setNewTodoItemValue] = useState("");
   return (
     <FormStyle
-      value={newTodoItemValue}
       onSubmit={(event) => {
         event.preventDefault();
-        setNewTodoItemValue("");
-
         const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!
-
         onCreate(newTodo);
       }}
     >
