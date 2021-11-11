@@ -2,7 +2,7 @@ import Image from "next/image";
 import editIcon from "../../public/icons/edit.svg";
 import { Line, Circle } from "rc-progress";
 import { CreateTitle } from "../cardTitle/createTitle";
-import { TodoList } from "../todo/TodoList";
+import { todoCounter, todoCounterInString, TodoList } from "../todo/TodoList";
 import styled from "styled-components";
 import { useState } from "react";
 import { useLocalStorageState } from "../../utils/localStorage";
@@ -12,12 +12,13 @@ export const calculatePercent = (value) => {
 };
 
 export default function VendorPlannerCard() {
+  const [todos, setTodos] = useLocalStorageState("todos", []);
   const [editMode, setEditMode] = useState(false);
   const [displayMode, setDisplayMode] = useState(false);
-  //   const [cardTitle, setCardTitle] = useLocalStorageState("card title", {});
-  //   const vendorCardTitle = cardTitle.map(({ name }) => {
-  //     return name;
-  //   });
+  const [cardTitle, setCardTitle] = useState(""); // cardTitle is a string!! not an array
+  const [editTitleMode, setEditTitleMode] = useState(true);
+  const [displayTitleMode, setDisplayTitleMode] = useState(false);
+
   const turnOnEditMode = () => {
     setEditMode(true);
     setDisplayMode(false);
@@ -27,7 +28,18 @@ export default function VendorPlannerCard() {
     setEditMode(false);
   };
 
-  const percent = calculatePercent(3 / 5);
+  const submitTitle = (newTitle) => {
+    setCardTitle(newTitle);
+    setDisplayTitleMode(true);
+    setEditTitleMode(false);
+  };
+
+  const editTitle = () => {
+    setDisplayTitleMode(false);
+    setEditTitleMode(true);
+  };
+  const percent = calculatePercent(todoCounter(todos));
+  console.log("PERCENT", percent);
 
   return (
     <>
@@ -39,19 +51,23 @@ export default function VendorPlannerCard() {
           <p>add</p>
         </ButtonWrapper>
         <div className={editMode ? "active" : "inactive"}>
-          {/* <CreateTitle
-          onCreate={(name) => {
-            setCardTitle({ id: name, name });
-          }}
-        />
-        <h3>{CardTitle}</h3> */}
-          <TodoList />
+          <div className={displayTitleMode ? "inactive" : "active"}>
+            <CreateTitle onCreate={submitTitle} />{" "}
+          </div>
+          <h3 className={editTitleMode ? "inactive" : "active"}>
+            {cardTitle}{" "}
+            <EditButton onClick={editTitle}>
+              <Image src={editIcon} width={12} height={12} />
+            </EditButton>
+          </h3>
+          <TodoList todos={todos} setTodos={setTodos} />
           <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
         </div>
       </CardWrapper>
-      <CardWrapper className={displayMode ? "active" : "inactive"}>
-        <TodoButton onClick={turnOnEditMode}>
+      <CardWrapperSmall className={displayMode ? "active" : "inactive"}>
+        <TodoListButton onClick={turnOnEditMode}>
           <ProgressBarWrapper>
+            <h3>{cardTitle}</h3>
             <Line
               percent={percent}
               strokeWidth="5"
@@ -60,8 +76,9 @@ export default function VendorPlannerCard() {
               trailColor="#ffffff"
             />
           </ProgressBarWrapper>
-        </TodoButton>
-      </CardWrapper>
+        </TodoListButton>
+        <TodoCounterWrapper>{todoCounterInString(todos)}</TodoCounterWrapper>
+      </CardWrapperSmall>
     </>
   );
 }
@@ -84,6 +101,10 @@ const CardWrapper = styled.section`
     text-align: center;
     padding-top: 15px;
   }
+`;
+
+const CardWrapperSmall = styled(CardWrapper)`
+  height: 120px;
 `;
 
 const EditButton = styled.button`
@@ -114,17 +135,24 @@ const SaveButton = styled.button`
   border-radius: 3px;
 `;
 
-const TodoButton = styled.button`
+const TodoListButton = styled.button`
   all: unset;
   font-family: "open sans", "roboto";
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 45px;
   color: #5c5c5c;
 `;
 
 const ProgressBarWrapper = styled.div`
   width: 60vw;
   height: 10px;
+`;
+
+const TodoCounterWrapper = styled.div`
+  font-family: "open sans", "roboto";
+  font-size: 14px;
+  margin-left: 60vw;
+  margin-top: 60px;
+  color: #5c5c5c;
 `;

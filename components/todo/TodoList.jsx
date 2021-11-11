@@ -1,23 +1,36 @@
 import { CreateTodo } from "./CreateTodo";
 import { TodoItem } from "./TodoItem";
-import { useLocalStorageState } from "../../utils/localStorage";
 import { v4 as uuidv4 } from "uuid";
 
-export const TodoList = () => {
-  //useLocalStorageState >> custom Hook function
-  const [todos, setTodos] = useLocalStorageState("todos", []);
+export const TodoList = ({ todos, setTodos }) => {
+  const toggleClick = (id) => {
+    const clickedIndex = (element) => element.id == id;
+    const todoIndex = todos.findIndex(clickedIndex);
+    const newTodoArray = [...todos];
+    console.log("newTodoArray", newTodoArray, todoIndex);
+
+    newTodoArray[todoIndex].isDone
+      ? (newTodoArray[todoIndex].isDone = false)
+      : (newTodoArray[todoIndex].isDone = true);
+    setTodos([...newTodoArray]);
+  };
+
   const deleteTodo = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id != id); // new array consists of undeleted todos
     setTodos(updatedTodos);
   };
 
-  // const todoCounter = () => {
-  //   const todoIsDone = todos.filter((todo) => todo.isDone); // new array consists of undeleted todos
-  //   console.log(todoIsDone);
-  // };
-
-  const todoItems = todos.map(({ id, name }) => {
-    return <TodoItem key={id} name={name} id={id} deleteTodo={deleteTodo} />;
+  const todoItems = todos.map(({ id, name, isDone }) => {
+    return (
+      <TodoItem
+        key={id}
+        name={name}
+        id={id}
+        isDone={isDone}
+        deleteTodo={deleteTodo}
+        toggleClick={toggleClick}
+      />
+    );
   });
 
   return (
@@ -25,10 +38,25 @@ export const TodoList = () => {
       <div>{todoItems}</div>
       <CreateTodo
         onCreate={(name) => {
-          setTodos([...todos, { id: uuidv4(), name }]);
+          setTodos([...todos, { id: uuidv4(), name, isDone: false }]);
         }}
       />
-      {/* <div>{todoCounter}</div> */}
     </>
+  );
+};
+
+export const todoCounter = (todos) => {
+  const finishedTask = todos.filter((todo) => todo.isDone).length;
+  const allTask = todos.length;
+  return finishedTask / allTask;
+};
+
+export const todoCounterInString = (todos) => {
+  const finishedTask = todos.filter((todo) => todo.isDone).length;
+  const allTask = todos.length;
+  return (
+    <span>
+      {finishedTask} / {allTask}
+    </span>
   );
 };

@@ -3,16 +3,9 @@ import styled from "styled-components";
 import Image from "next/image";
 import { useLocalStorageState } from "../../utils/localStorage";
 import deleteIcon from "../../public/icons/delete.svg";
+import { useEffect, useState } from "react";
 
-export const TodoItem = ({ name, id, deleteTodo }) => {
-  const [isDone, setIsDone] = useLocalStorageState(
-    `todo-id-done : ${id}`,
-    false
-  );
-  const toggleClick = () => {
-    setIsDone(!isDone);
-  };
-
+export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
   const handleClick = () => {
     deleteTodo(id);
   };
@@ -21,10 +14,10 @@ export const TodoItem = ({ name, id, deleteTodo }) => {
   return (
     <FormStyle>
       <TodoWrapper>
-        <span onClick={toggleClick}>
+        <span onClick={() => toggleClick(id)}>
           <input type="checkbox" id="name" name="name" checked={isDone} />
         </span>
-        <span onClick={toggleClick} className={listClassName}>
+        <span onClick={() => toggleClick(id)} className={listClassName}>
           <LabelStyle htmlFor="name">{name}</LabelStyle>
         </span>
         <ButtonStyle type="button" onClick={handleClick}>
