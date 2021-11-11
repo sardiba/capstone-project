@@ -24,7 +24,6 @@ export default function DateCard() {
     setEditMode(false);
   };
   const cardClassNameEdit = displayMode ? "inactive" : "";
-  // const cardClassNameDisplay = editMode ? "inactive" : "";
   return (
     <>
       <CardWrapper className={cardClassNameEdit}>
@@ -82,7 +81,7 @@ const ButtonWrapper = styled.div`
   position: absolute;
   top: 25%;
   left: 43%;
-  opacity: 50%;
+  color: #919191;
   p {
     margin: 0px;
     font-family: "open sans", "roboto";

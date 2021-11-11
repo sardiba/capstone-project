@@ -12,23 +12,23 @@ export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
   const listClassName = isDone ? "TodoItem TodoItem--is-done" : "TodoItem";
 
   return (
-    <FormStyle>
+    <FormStyled>
       <TodoWrapper>
         <span onClick={() => toggleClick(id)}>
           <input type="checkbox" id="name" name="name" checked={isDone} />
         </span>
         <span onClick={() => toggleClick(id)} className={listClassName}>
-          <LabelStyle htmlFor="name">{name}</LabelStyle>
+          <LabelStyled htmlFor="name">{name}</LabelStyled>
         </span>
-        <ButtonStyle type="button" onClick={handleClick}>
+        <ButtonStyled type="button" onClick={handleClick}>
           <Image src={deleteIcon} alt="delete" width={15} height={15} />
-        </ButtonStyle>
+        </ButtonStyled>
       </TodoWrapper>
-    </FormStyle>
+    </FormStyled>
   );
 };
 
-const FormStyle = styled.form`
+const FormStyled = styled.form`
   margin-left: 30px;
 `;
 
@@ -36,10 +36,10 @@ const TodoWrapper = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 2.5fr 1fr;
 `;
-const LabelStyle = styled.label`
+const LabelStyled = styled.label`
   font-size: 14px;
 `;
-const ButtonStyle = styled.button`
+const ButtonStyled = styled.button`
   all: unset;
   padding: 3px;
   border-radius: 3px;

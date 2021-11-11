@@ -70,10 +70,9 @@ const LinkStyle = styled.a`
   padding: 15px;
   border: none;
   border-radius: 50%;
-  background-color: #854848;
-  opacity: 70%;
+  background-color: rgba(133, 72, 72, 0.7);
   &:active {
-    background-color: #6d3b3b;
+    background-color: rgba(133, 72, 72, 1);
     transform: scale(1.2);
   }
 `;

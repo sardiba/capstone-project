@@ -21,7 +21,7 @@ export const CreateTitle = ({ onCreate }) => {
 
 const FormStyled = styled.form`
   margin-left: 25px;
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 10px;
   font-family: "open sans", "roboto";
   color: #5c5c5c;

@@ -115,7 +115,7 @@ const ButtonWrapper = styled.div`
   position: absolute;
   top: 35%;
   left: 43%;
-  opacity: 50%;
+  color: #919191;
   p {
     margin: 0px;
     font-family: "open sans", "roboto";
