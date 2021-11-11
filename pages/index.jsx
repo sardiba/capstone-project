@@ -1,12 +1,10 @@
 import Head from "next/head";
-import { useState } from "react";
 import styled from "styled-components";
 import Countdown from "../components/Countdown";
-import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function Home() {
-  const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
       <Head>
@@ -17,15 +15,11 @@ export default function Home() {
       <main>
         <PufferPageTop />
         <Countdown />
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
       </main>
     </div>
   );
 }
 
 const PufferPageTop = styled.div`
-  height: 10vh;
+  height: 15vh;
 `;
