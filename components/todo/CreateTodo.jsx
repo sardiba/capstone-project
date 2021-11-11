@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 export const CreateTodo = ({ onCreate }) => {
@@ -10,7 +9,7 @@ export const CreateTodo = ({ onCreate }) => {
         onCreate(newTodo);
       }}
     >
-      <TextInputStyle type="text" name="newTodo" />
+      <TextInputStyle type="text" name="newTodo" placeholder="add your to do" />
       <SubmitButtonStyle type="submit" value="add" />
     </FormStyle>
   );
