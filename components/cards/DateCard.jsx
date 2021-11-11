@@ -92,7 +92,7 @@ const DatePickerWrapper = styled.div`
   margin-left: 23%;
   padding-top: 5px;
   p {
-    opacity: 70%;
+    color: #5c5c5c;
     font-size: 12px;
   }
 `;

@@ -50,7 +50,7 @@ export default function VendorPlannerCard() {
           </EditButton>
           <p>add</p>
         </ButtonWrapper>
-        <div className={editMode ? "active" : "inactive"}>
+        <TodoListWrapper className={editMode ? "active" : "inactive"}>
           <div className={displayTitleMode ? "inactive" : "active"}>
             <CreateTitle onCreate={submitTitle} />{" "}
           </div>
@@ -62,9 +62,9 @@ export default function VendorPlannerCard() {
           </h3>
           <TodoList todos={todos} setTodos={setTodos} />
           <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
-        </div>
+        </TodoListWrapper>
       </CardWrapper>
-      <CardWrapperSmall className={displayMode ? "active" : "inactive"}>
+      <CardWrapper className={displayMode ? "active" : "inactive"}>
         <TodoListButton onClick={turnOnEditMode}>
           <ProgressBarWrapper>
             <h3>{cardTitle}</h3>
@@ -78,7 +78,7 @@ export default function VendorPlannerCard() {
           </ProgressBarWrapper>
         </TodoListButton>
         <TodoCounterWrapper>{todoCounterInString(todos)}</TodoCounterWrapper>
-      </CardWrapperSmall>
+      </CardWrapper>
     </>
   );
 }
@@ -86,7 +86,7 @@ export default function VendorPlannerCard() {
 const CardWrapper = styled.section`
   position: relative;
   width: 80vw;
-  height: 200px;
+  min-height: 120px;
   background-color: #e8e5df;
   border-radius: 7px;
   margin-top: 30px;
@@ -103,17 +103,17 @@ const CardWrapper = styled.section`
   }
 `;
 
-const CardWrapperSmall = styled(CardWrapper)`
-  height: 120px;
-`;
-
 const EditButton = styled.button`
   all: unset;
 `;
 
+const TodoListWrapper = styled.div`
+  padding-bottom: 20px;
+`;
+
 const ButtonWrapper = styled.div`
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 43%;
   color: #919191;
   p {
