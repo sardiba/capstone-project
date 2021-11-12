@@ -1,9 +1,7 @@
 // import "./TodoItem.css";
 import styled from "styled-components";
 import Image from "next/image";
-import { useLocalStorageState } from "../../utils/localStorage";
 import deleteIcon from "../../public/icons/delete.svg";
-import { useEffect, useState } from "react";
 
 export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
   const handleClick = () => {
@@ -14,11 +12,17 @@ export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
   return (
     <FormStyled>
       <TodoWrapper>
-        <span onClick={() => toggleClick(id)}>
-          <input type="checkbox" id="name" name="name" checked={isDone} />
+        <span>
+          <input
+            onClick={() => toggleClick(id)}
+            type="checkbox"
+            id={id}
+            checked={isDone}
+            name={id}
+          />
         </span>
-        <span onClick={() => toggleClick(id)} className={listClassName}>
-          <LabelStyled htmlFor="name">{name}</LabelStyled>
+        <span className={listClassName}>
+          <LabelStyled htmlFor={id}>{name}</LabelStyled>
         </span>
         <ButtonStyled type="button" onClick={handleClick}>
           <Image src={deleteIcon} alt="delete" width={15} height={15} />

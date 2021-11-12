@@ -2,12 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import { useLocalStorageState } from "../utils/localStorage";
 import DateCard from "../components/cards/DateCard";
 import VendorPlannerCard from "../components/cards/VendorPlannerCard";
 
 export default function plannerHollyMatrimony() {
-  const [title, setTitle] = useLocalStorageState("title", {});
   return (
     <>
       <Head>
@@ -22,9 +20,9 @@ export default function plannerHollyMatrimony() {
       <LableStyle>Date</LableStyle>
       <DateCard />
       <LableStyle>Venue</LableStyle>
-      <VendorPlannerCard />
+      <VendorPlannerCard type="venue" />
       <LableStyle>Photography</LableStyle>
-      <VendorPlannerCard />
+      <VendorPlannerCard type="photography" />
       <LableStyle>Decoration and Flowers</LableStyle>
       <VendorPlannerCard />
       <LableStyle>Bridal and Makeup</LableStyle>
