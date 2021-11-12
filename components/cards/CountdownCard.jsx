@@ -154,7 +154,7 @@ const CreateLabel = styled.p`
 
 const EditButton = styled.button`
   all: unset;
-  padding-top: 40px;
+  padding-top: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
