@@ -2,7 +2,7 @@ import { CreateTodo } from "./CreateTodo";
 import { TodoItem } from "./TodoItem";
 import { v4 as uuidv4 } from "uuid";
 
-export const TodoList = ({ todos, setTodos }) => {
+export const TodoList = ({ todos, setTodos, type }) => {
   const toggleClick = (id) => {
     console.log("**ID**", id);
     const clickedIndex = (element) => element.id == id;
@@ -21,40 +21,49 @@ export const TodoList = ({ todos, setTodos }) => {
     setTodos(updatedTodos);
   };
 
-  const todoItems = todos.map(({ id, name, isDone }) => {
-    return (
-      <TodoItem
-        key={id}
-        name={name}
-        id={id}
-        isDone={isDone}
-        deleteTodo={deleteTodo}
-        toggleClick={toggleClick}
-      />
-    );
-  });
+  const todoItems = todos
+    .filter((todo) => todo.type == type)
+    .map(({ id, name, isDone }) => {
+      return (
+        <TodoItem
+          key={id}
+          name={name}
+          id={id}
+          isDone={isDone}
+          deleteTodo={deleteTodo}
+          toggleClick={toggleClick}
+        />
+      );
+    });
 
   return (
     <>
       <div>{todoItems}</div>
       <CreateTodo
         onCreate={(name) => {
-          setTodos([...todos, { id: uuidv4(), name, isDone: false }]);
+          setTodos([
+            ...todos,
+            { id: uuidv4(), name, type: type, isDone: false },
+          ]);
         }}
       />
     </>
   );
 };
 
-export const todoCounter = (todos) => {
-  const finishedTask = todos.filter((todo) => todo.isDone).length;
-  const allTask = todos.length;
+export const todoCounter = (todos, type) => {
+  const finishedTask = todos
+    .filter((todo) => todo.type == type)
+    .filter((todo) => todo.isDone).length;
+  const allTask = todos.filter((todo) => todo.type == type).length;
   return finishedTask / allTask;
 };
 
-export const todoCounterInString = (todos) => {
-  const finishedTask = todos.filter((todo) => todo.isDone).length;
-  const allTask = todos.length;
+export const todoCounterInString = (todos, type) => {
+  const finishedTask = todos
+    .filter((todo) => todo.type == type)
+    .filter((todo) => todo.isDone).length;
+  const allTask = todos.filter((todo) => todo.type == type).length;
   return (
     <span>
       {finishedTask} / {allTask}

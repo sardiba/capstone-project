@@ -11,7 +11,7 @@ export const calculatePercent = (value) => {
   return value * 100;
 };
 
-export default function VendorPlannerCard() {
+export default function VendorPlannerCard({ type }) {
   const [todos, setTodos] = useLocalStorageState("todos", []);
   const [editMode, setEditMode] = useState(false);
   const [displayMode, setDisplayMode] = useState(false);
@@ -38,7 +38,7 @@ export default function VendorPlannerCard() {
     setDisplayTitleMode(false);
     setEditTitleMode(true);
   };
-  const percent = calculatePercent(todoCounter(todos));
+  const percent = calculatePercent(todoCounter(todos, type));
   console.log("PERCENT", percent);
 
   return (
@@ -60,7 +60,7 @@ export default function VendorPlannerCard() {
               <Image src={editIcon} width={12} height={12} />
             </EditButton>
           </h3>
-          <TodoList todos={todos} setTodos={setTodos} />
+          <TodoList todos={todos} setTodos={setTodos} type={type} />
           <SaveButton onClick={turnOnDisplayMode}>save</SaveButton>
         </TodoListWrapper>
       </CardWrapper>
@@ -77,7 +77,9 @@ export default function VendorPlannerCard() {
             />
           </ProgressBarWrapper>
         </TodoListButton>
-        <TodoCounterWrapper>{todoCounterInString(todos)}</TodoCounterWrapper>
+        <TodoCounterWrapper>
+          {todoCounterInString(todos, type)}
+        </TodoCounterWrapper>
       </CardWrapper>
     </>
   );
