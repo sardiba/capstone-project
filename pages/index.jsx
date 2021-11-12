@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import Countdown from "../components/Countdown";
+import CountdownCard from "../components/cards/CountdownCard";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <PufferPageTop />
-        <Countdown />
+        <CountdownCard />
       </main>
     </div>
   );

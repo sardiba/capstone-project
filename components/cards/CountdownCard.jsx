@@ -1,19 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import Image from "next/image";
-import editIcon from "../public/icons/edit.svg";
+import editIcon from "../../public/icons/edit.svg";
 import styled from "styled-components";
+import { CreateCountdownTitle } from "../cardTitle/CreateCountdownTitle";
 
-export default function Countdown() {
+export default function CountdownCard() {
   const [pickedDate, setPickedDate] = useState(new Date());
   const [countdownDays, setCountdownDays] = useState("00");
   const [editMode, setEditMode] = useState(false);
+  const [cardTitle, setCardTitle] = useState("");
   const [displayMode, setDisplayMode] = useState(false);
+  const [editTitleMode, setEditTitleMode] = useState(true);
+  const [displayTitleMode, setDisplayTitleMode] = useState(false);
 
   let interval = useRef();
   const startCountdown = () => {
     const countdownDate = new Date(pickedDate.toString()).getTime();
-    // console.log("COUNTODWN DATE", countdownDate);
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -42,6 +45,17 @@ export default function Countdown() {
     setDisplayMode(false);
   };
 
+  const submitTitle = (newTitle) => {
+    setCardTitle(newTitle);
+    setDisplayTitleMode(true);
+    setEditTitleMode(false);
+  };
+
+  const editTitle = () => {
+    setDisplayTitleMode(false);
+    setEditTitleMode(true);
+  };
+
   const turnOnDisplayMode = () => {
     setDisplayMode(true);
     setEditMode(false);
@@ -57,6 +71,15 @@ export default function Countdown() {
           <CreateLabel>CREATE YOUR COUNTDOWN</CreateLabel>
         </div>
         <div className={editMode ? "active" : "inactive"}>
+          <div className={displayTitleMode ? "inactive" : "active"}>
+            <CreateCountdownTitle onCreate={submitTitle} />
+          </div>
+          <h2 className={editTitleMode ? "inactive" : "active"}>
+            {cardTitle} {"  "}
+            <EditTitleButton onClick={editTitle}>
+              <Image src={editIcon} width={12} height={12} />
+            </EditTitleButton>
+          </h2>
           <DatePickerWrapper>
             <p>pick your date here:</p>
             <DatePicker
@@ -74,7 +97,7 @@ export default function Countdown() {
             <span className="counter">{countdownDays}</span>
           </div>
           <div>
-            <h2>Adam and Eve Wedding</h2>
+            <h2>{cardTitle}</h2>
           </div>
         </section>
       </CountdownWrapper>
@@ -91,12 +114,12 @@ const CountdownWrapper = styled.section`
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   color: #5c5c5c;
   .counterWrapper {
     text-align: center;
-    padding-top: 10px;
   }
   .counter {
     font-family: "open sans", "roboto";
@@ -120,17 +143,6 @@ const CountdownWrapper = styled.section`
   }
 `;
 
-// const ButtonWrapper = styled.div`
-//   position: absolute;
-//   top: 22%;
-//   left: 45%;
-//   color: #919191;
-//   p {
-//     margin: 0px;
-//     font-family: "open sans", "roboto";
-//   }
-// `;
-
 const CreateLabel = styled.p`
   color: #3f3f3f;
   font-family: "open sans", "roboto";
@@ -148,6 +160,9 @@ const EditButton = styled.button`
   margin-right: auto;
 `;
 
+const EditTitleButton = styled.button`
+  all: unset;
+`;
 const DatePickerWrapper = styled.div`
   font-family: "open sans", "roboto";
   margin-left: 23%;
