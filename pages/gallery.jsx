@@ -16,6 +16,7 @@ export default function Gallery() {
       <LinkStyle>Bridal and Makeup</LinkStyle>
       <LinkStyle>Decoration and Flowers</LinkStyle>
       <LinkStyle>Invitation and Souvenirs</LinkStyle>
+      <PufferPageBottom />
     </>
   );
 }
@@ -48,4 +49,8 @@ const LinkStyle = styled.a`
     background-color: #c2bcb1;
     transform: scale(1.1);
   }
+`;
+
+const PufferPageBottom = styled.div`
+  height: 8vh;
 `;
