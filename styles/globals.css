@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.TodoItem {
+  color: #5c5c5c;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.TodoItem--is-done {
+  text-decoration: line-through;
+}
+
+.inactive {
+  display: none;
+}
