@@ -9,8 +9,15 @@ export const CreateTodo = ({ onCreate }) => {
         onCreate(newTodo);
       }}
     >
-      <TextInputStyle type="text" name="newTodo" placeholder="add your to do" />
-      <SubmitButtonStyle type="submit" value="add" />
+      <label>
+        <ScreenReaderOnly>Vendor name</ScreenReaderOnly>
+        <TextInputStyled
+          type="text"
+          name="newTodo"
+          placeholder="add your to do"
+        />
+      </label>
+      <SubmitButtonStyle aria-label="submit" type="submit" value="add" />
     </FormStyle>
   );
 };
@@ -19,7 +26,19 @@ const FormStyle = styled.form`
   font-size: 10px;
   font-family: "open sans", "roboto";
 `;
-const TextInputStyle = styled.input`
+
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+`;
+
+const TextInputStyled = styled.input`
   font-size: 12px;
   width: 180px;
   margin: 10px;

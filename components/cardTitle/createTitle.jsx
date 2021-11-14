@@ -9,12 +9,15 @@ export const CreateTitle = ({ onCreate }) => {
         event.preventDefault();
       }}
     >
-      <TextInputStyled
-        type="text"
-        name="newTitle"
-        placeholder="enter vendor name"
-      />
-      <SubmitButtonStyle type="submit" value="save" />
+      <label>
+        <ScreenReaderOnly>Vendor name</ScreenReaderOnly>
+        <TextInputStyled
+          type="text"
+          name="newTitle"
+          placeholder="enter vendor name"
+        />
+      </label>
+      <SubmitButtonStyle aria-label="save" type="submit" value="save" />
     </FormStyled>
   );
 };
@@ -39,4 +42,15 @@ const SubmitButtonStyle = styled.input`
   border-radius: 3px;
   background-color: #854848;
   color: #ffffff;
+`;
+
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `;
