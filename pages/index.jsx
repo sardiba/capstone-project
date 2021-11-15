@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styled from "styled-components";
 import CountdownCard from "../components/cards/CountdownCard";
-
 import "react-datepicker/dist/react-datepicker.css";
+import { TodoOverview } from "../components/todo/TodoOverview";
 
 export default function Home() {
   return (
@@ -15,11 +15,17 @@ export default function Home() {
       <main>
         <PufferPageTop />
         <CountdownCard />
+        <TodoOverview />
+        <PufferPageBottom />
       </main>
     </div>
   );
 }
 
 const PufferPageTop = styled.div`
+  height: 15vh;
+`;
+
+const PufferPageBottom = styled.div`
   height: 15vh;
 `;
