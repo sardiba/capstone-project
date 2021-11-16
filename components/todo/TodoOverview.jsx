@@ -1,9 +1,11 @@
 import { useLocalStorageState } from "../../utils/localStorage";
 import { TodoItem } from "./TodoItem";
 import styled from "styled-components";
+import { useState } from "react";
 
 export const TodoOverview = () => {
   const [todos, setTodos] = useLocalStorageState("todos", []);
+  const [displayMode, setDisplayMode] = useState(false);
 
   const todoVenue = todos
     .filter((todo) => todo.type == "venue" && todo.isDone == false)
@@ -18,7 +20,6 @@ export const TodoOverview = () => {
         />
       );
     });
-  console.log("todo venue", todoVenue);
 
   const todoPhotography = todos
     .filter((todo) => todo.type == "photography" && todo.isDone == false)
@@ -33,7 +34,6 @@ export const TodoOverview = () => {
         />
       );
     });
-  console.log("todo photpgraphy", todoPhotography);
 
   const todoDecoration = todos
     .filter(
@@ -50,19 +50,61 @@ export const TodoOverview = () => {
         />
       );
     });
-  // onClick={toggleCollapse}
-  console.log("todo decoration and flowers", todoDecoration);
+
+  const todoBridal = todos
+    .filter((todo) => todo.type == "bridal and makeup" && todo.isDone == false)
+    .map(({ id, name, isDone }) => {
+      return (
+        <TodoItem
+          key={id}
+          name={name}
+          id={id}
+          isDone={isDone}
+          editAble={false}
+        />
+      );
+    });
+
+  const todoCatering = todos
+    .filter((todo) => todo.type == "catering and cake" && todo.isDone == false)
+    .map(({ id, name, isDone }) => {
+      return (
+        <TodoItem
+          key={id}
+          name={name}
+          id={id}
+          isDone={isDone}
+          editAble={false}
+        />
+      );
+    });
+
+  const toggleCollapse = () => {
+    setDisplayMode(!displayMode);
+  };
+
   return (
     <>
-      <CardWrapper>
-        <ButtonStyled>Holly Matrimony</ButtonStyled>
-        <VenueLable>Venue</VenueLable>
-        <TodoItemStyled>{todoVenue}</TodoItemStyled>
-        <PhotographyLable>Photography</PhotographyLable>
-        <TodoItemStyled>{todoPhotography}</TodoItemStyled>
-        <DecorationLable>Decoration and Flowers</DecorationLable>
-        <TodoItemStyled>{todoDecoration}</TodoItemStyled>
-      </CardWrapper>
+      <div>
+        <ButtonStyled>Engagement Party</ButtonStyled>
+        <ButtonStyled>Pre Wedding Shoot</ButtonStyled>
+        <ButtonStyled onClick={toggleCollapse}>Holly Matrimony</ButtonStyled>
+        <CardWrapper className={displayMode ? "active" : "inactive"}>
+          <LinkStyled href="/plannerHollyMatrimony">
+            <VenueLable>Venue</VenueLable>
+            <TodoItemStyled>{todoVenue}</TodoItemStyled>
+            <PhotographyLable>Photography</PhotographyLable>
+            <TodoItemStyled>{todoPhotography}</TodoItemStyled>
+            <DecorationLable>Decoration and Flowers</DecorationLable>
+            <TodoItemStyled>{todoDecoration}</TodoItemStyled>
+            <BridalLable>Bridal and Makeup</BridalLable>
+            <TodoItemStyled>{todoBridal}</TodoItemStyled>
+            <CateringLable>Catering and Cake</CateringLable>
+            <TodoItemStyled>{todoCatering}</TodoItemStyled>
+          </LinkStyled>
+        </CardWrapper>
+        <ButtonStyled>Wedding Reception</ButtonStyled>
+      </div>
     </>
   );
 };
@@ -99,17 +141,22 @@ const CardWrapper = styled.section`
   }
 `;
 
+const LinkStyled = styled.a`
+  all: unset;
+`;
+
 const ButtonStyled = styled.h2`
   font-family: "open sans", "roboto";
   font-size: 12px;
-  width: 50vw;
+  width: 80vw;
   background-color: #dac1c1;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 `;
 
 const VenueLable = styled.span`
@@ -128,4 +175,12 @@ const PhotographyLable = styled(VenueLable)`
 
 const DecorationLable = styled(VenueLable)`
   background-color: #e2ae6a;
+`;
+
+const BridalLable = styled(VenueLable)`
+  background-color: #b38fca;
+`;
+
+const CateringLable = styled(VenueLable)`
+  background-color: #df6fb4;
 `;

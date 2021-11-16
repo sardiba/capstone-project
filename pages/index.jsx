@@ -14,7 +14,9 @@ export default function Home() {
       </Head>
       <main>
         <PufferPageTop />
+        <HeadingStyled>Countdown</HeadingStyled>
         <CountdownCard />
+        <HeadingStyled>Planner</HeadingStyled>
         <TodoOverview />
         <PufferPageBottom />
       </main>
@@ -24,6 +26,15 @@ export default function Home() {
 
 const PufferPageTop = styled.div`
   height: 15vh;
+`;
+
+const HeadingStyled = styled.h1`
+  font-family: "parisienne", "roboto";
+  font-size: 30px;
+  color: #5c5c5c;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
 `;
 
 const PufferPageBottom = styled.div`
