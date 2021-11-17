@@ -16,7 +16,6 @@ export default function VendorCard({
   const handleClick = () => {
     const clickedIndex = (element) => element.cardTitle == cardTitle;
     const cardIndex = vendors.findIndex(clickedIndex);
-    console.log("**CLICKED CARD INDEX**", cardIndex);
     const newVendors = [...vendors];
     //Toggle the bookmark with ternary operation
     newVendors[cardIndex].isBookmarked
