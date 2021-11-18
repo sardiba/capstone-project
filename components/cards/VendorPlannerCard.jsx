@@ -39,7 +39,6 @@ export default function VendorPlannerCard({ type }) {
     setEditTitleMode(true);
   };
   const percent = calculatePercent(todoCounter(todos, type));
-  console.log("PERCENT", percent);
 
   return (
     <>

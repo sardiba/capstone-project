@@ -3,7 +3,14 @@ import styled from "styled-components";
 import Image from "next/image";
 import deleteIcon from "../../public/icons/delete.svg";
 
-export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
+export const TodoItem = ({
+  name,
+  id,
+  isDone,
+  deleteTodo,
+  toggleClick,
+  isEditable = true,
+}) => {
   const handleClick = () => {
     deleteTodo(id);
   };
@@ -13,20 +20,25 @@ export const TodoItem = ({ name, id, isDone, deleteTodo, toggleClick }) => {
     <FormStyled>
       <TodoWrapper>
         <span>
-          <input
-            onClick={() => toggleClick(id)}
-            type="checkbox"
-            id={id}
-            checked={isDone}
-            name={id}
-          />
+          {isEditable && (
+            <input
+              onClick={() => toggleClick(id)}
+              type="checkbox"
+              id={id}
+              checked={isDone}
+              name={id}
+            />
+          )}
+          {!isEditable && <BulletPoint />}
         </span>
         <span className={listClassName}>
           <LabelStyled htmlFor={id}>{name}</LabelStyled>
         </span>
-        <ButtonStyled type="button" onClick={handleClick}>
-          <Image src={deleteIcon} alt="delete" width={15} height={15} />
-        </ButtonStyled>
+        {isEditable && (
+          <ButtonStyled type="button" onClick={handleClick}>
+            <Image src={deleteIcon} alt="delete" width={15} height={15} />
+          </ButtonStyled>
+        )}
       </TodoWrapper>
     </FormStyled>
   );
@@ -40,9 +52,20 @@ const TodoWrapper = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 2.5fr 1fr;
 `;
+
+const BulletPoint = styled.div`
+  background-color: #854848;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  margin-top: 6px;
+  margin-left: 10px;
+`;
+
 const LabelStyled = styled.label`
   font-size: 14px;
 `;
+
 const ButtonStyled = styled.button`
   all: unset;
   padding: 3px;

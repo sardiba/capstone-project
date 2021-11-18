@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 
 export const TodoList = ({ todos, setTodos, type }) => {
   const toggleClick = (id) => {
-    console.log("**ID**", id);
     const clickedIndex = (element) => element.id == id;
     const todoIndex = todos.findIndex(clickedIndex);
     const newTodoArray = [...todos];
