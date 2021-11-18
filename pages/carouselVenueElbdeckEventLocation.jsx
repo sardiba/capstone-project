@@ -12,7 +12,6 @@ import carouselVenue1Pic4 from "../public/images/carouselVenue1Pic4.jpeg";
 export default function CarouselVenueElbdeckEventLocation() {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -75,7 +74,6 @@ export default function CarouselVenueElbdeckEventLocation() {
           />
         </div>
       </Carousel>
-
       <PufferPageBottom />
     </>
   );

@@ -72,7 +72,7 @@ const LinkStyle = styled.a`
   position: fixed;
   z-index: 2;
   top: 90px;
-  width: 14vw;
+  width: 50px;
   margin-top: 10px;
   margin-left: 5px;
   padding: 15px;
