@@ -9,7 +9,7 @@ export const TodoItem = ({
   isDone,
   deleteTodo,
   toggleClick,
-  editAble = true,
+  isEditable = true,
 }) => {
   const handleClick = () => {
     deleteTodo(id);
@@ -20,7 +20,7 @@ export const TodoItem = ({
     <FormStyled>
       <TodoWrapper>
         <span>
-          {editAble && (
+          {isEditable && (
             <input
               onClick={() => toggleClick(id)}
               type="checkbox"
@@ -29,12 +29,12 @@ export const TodoItem = ({
               name={id}
             />
           )}
-          {!editAble && <BulletPoint></BulletPoint>}
+          {!isEditable && <BulletPoint />}
         </span>
         <span className={listClassName}>
           <LabelStyled htmlFor={id}>{name}</LabelStyled>
         </span>
-        {editAble && (
+        {isEditable && (
           <ButtonStyled type="button" onClick={handleClick}>
             <Image src={deleteIcon} alt="delete" width={15} height={15} />
           </ButtonStyled>

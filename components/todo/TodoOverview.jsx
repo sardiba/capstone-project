@@ -16,7 +16,7 @@ export const TodoOverview = () => {
           name={name}
           id={id}
           isDone={isDone}
-          editAble={false}
+          isEditable={false}
         />
       );
     });
@@ -30,7 +30,7 @@ export const TodoOverview = () => {
           name={name}
           id={id}
           isDone={isDone}
-          editAble={false}
+          isEditable={false}
         />
       );
     });
@@ -46,7 +46,7 @@ export const TodoOverview = () => {
           name={name}
           id={id}
           isDone={isDone}
-          editAble={false}
+          isEditable={false}
         />
       );
     });
@@ -60,7 +60,7 @@ export const TodoOverview = () => {
           name={name}
           id={id}
           isDone={isDone}
-          editAble={false}
+          isEditable={false}
         />
       );
     });
@@ -74,7 +74,7 @@ export const TodoOverview = () => {
           name={name}
           id={id}
           isDone={isDone}
-          editAble={false}
+          isEditable={false}
         />
       );
     });
@@ -91,15 +91,15 @@ export const TodoOverview = () => {
         <ButtonStyled onClick={toggleCollapse}>Holly Matrimony</ButtonStyled>
         <CardWrapper className={displayMode ? "active" : "inactive"}>
           <LinkStyled href="/plannerHollyMatrimony">
-            <VenueLable>Venue</VenueLable>
+            <VenueLabel>Venue</VenueLabel>
             <TodoItemStyled>{todoVenue}</TodoItemStyled>
-            <PhotographyLable>Photography</PhotographyLable>
+            <PhotographyLabel>Photography</PhotographyLabel>
             <TodoItemStyled>{todoPhotography}</TodoItemStyled>
-            <DecorationLable>Decoration and Flowers</DecorationLable>
+            <DecorationLabel>Decoration and Flowers</DecorationLabel>
             <TodoItemStyled>{todoDecoration}</TodoItemStyled>
-            <BridalLable>Bridal and Makeup</BridalLable>
+            <BridalLabel>Bridal and Makeup</BridalLabel>
             <TodoItemStyled>{todoBridal}</TodoItemStyled>
-            <CateringLable>Catering and Cake</CateringLable>
+            <CateringLabel>Catering and Cake</CateringLabel>
             <TodoItemStyled>{todoCatering}</TodoItemStyled>
           </LinkStyled>
         </CardWrapper>
@@ -159,7 +159,7 @@ const ButtonStyled = styled.h2`
   margin-bottom: 20px;
 `;
 
-const VenueLable = styled.span`
+const VenueLabel = styled.span`
   background-color: #96d6b6;
   color: #ffffff;
   font-size: 9px;
@@ -169,18 +169,18 @@ const VenueLable = styled.span`
   margin-left: 20px;
 `;
 
-const PhotographyLable = styled(VenueLable)`
+const PhotographyLabel = styled(VenueLabel)`
   background-color: #6ab2e2;
 `;
 
-const DecorationLable = styled(VenueLable)`
+const DecorationLabel = styled(VenueLabel)`
   background-color: #e2ae6a;
 `;
 
-const BridalLable = styled(VenueLable)`
+const BridalLabel = styled(VenueLabel)`
   background-color: #b38fca;
 `;
 
-const CateringLable = styled(VenueLable)`
+const CateringLabel = styled(VenueLabel)`
   background-color: #df6fb4;
 `;

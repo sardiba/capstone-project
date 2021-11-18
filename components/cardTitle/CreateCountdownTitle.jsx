@@ -9,11 +9,14 @@ export const CreateCountdownTitle = ({ onCreate }) => {
         event.preventDefault();
       }}
     >
-      <TextInputStyled
-        type="text"
-        name="newTitle"
-        placeholder="enter countdown name"
-      />
+      <label>
+        <ScreenReaderOnly>Vendor name</ScreenReaderOnly>
+        <TextInputStyled
+          type="text"
+          name="newTitle"
+          placeholder="enter vendor name"
+        />
+      </label>
       <SubmitButtonStyle type="submit" value="save" />
     </FormStyled>
   );
@@ -26,6 +29,18 @@ const FormStyled = styled.form`
   font-family: "open sans", "roboto";
   color: #5c5c5c;
 `;
+
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+`;
+
 const TextInputStyled = styled.input`
   font-size: 12px;
   width: 180px;
