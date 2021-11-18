@@ -32,11 +32,11 @@ export default function VendorCard({
       </BookmarkButtonStyle>
       <h2>{cardTitle}</h2>
       <div className="cardContentWrapper">
-        <Image src={cardImage} alt="venue" width={100} height={100} />
+        <Image src={cardImage} alt="venue" height={100} width={100} />
         <div>
-          <a href="">Pricelist</a>
-          <a href="">Gallery</a>
-          <a href="">Contact</a>
+          <a href="/priceListVenueElbdeckEventLocation">Price list</a>
+          <a href="/carouselVenueElbdeckEventLocation">Gallery</a>
+          <a href="/contactVenueElbdeckEventLocation">Contact</a>
         </div>
       </div>
     </CardWrapper>

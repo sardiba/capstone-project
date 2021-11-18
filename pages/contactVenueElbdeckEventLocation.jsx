@@ -95,7 +95,7 @@ const CardWrapper = styled.section`
     font-size: 14px;
     color: #5c5c5c;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 25px;
   }
 `;
 
@@ -104,7 +104,7 @@ const ContactWrapper = styled.div`
   grid-template-rows: 50px 20px 50px 20px 50px 20px 50px 20px;
   justify-content: center;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 `;
 
 const ImageWrapper = styled.div`
