@@ -7,6 +7,7 @@ export const CreateTodo = ({ onCreate }) => {
         event.preventDefault();
         const newTodo = event.target.elements.newTodo.value; //event.target >> always the place where event take place!
         onCreate(newTodo);
+        event.target.reset();
       }}
     >
       <label>
@@ -15,6 +16,7 @@ export const CreateTodo = ({ onCreate }) => {
           type="text"
           name="newTodo"
           placeholder="add your to do"
+          autoComplete="off"
         />
       </label>
       <SubmitButtonStyle aria-label="submit" type="submit" value="add" />

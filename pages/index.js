@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Countdown from "../components/Countdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Quotes from "../components/cards/QuotesCard";
+import QuotesCard from "../components/cards/QuotesCard";
 
 export default function Home() {
   const [startDate, setStartDate] = useState(new Date());
@@ -21,6 +23,7 @@ export default function Home() {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
+        <QuotesCard />
       </main>
     </div>
   );
