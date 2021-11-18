@@ -7,7 +7,7 @@ import photographyPic1 from "../public/images/photography1.jpeg";
 import photographyPic2 from "../public/images/photography2.jpeg";
 import photographyPic3 from "../public/images/photography3.jpeg";
 import photographyPic4 from "../public/images/photography4.jpeg";
-import photographyPic5 from "../public/images/photography5.jpeg";
+import photographyPic5 from "../public/images/carouselVenue1Pic1.jpeg";
 import { useLocalStorageState } from "../utils/localStorage";
 
 const VendorContext = createContext({
