@@ -26,7 +26,6 @@ export default function Quotes() {
   // Do not render until the first quote is loaded
   if (!data) return null;
 
-  console.log("*DATA*", data);
   return (
     <>
       <CardHeader>Quotes of the Day</CardHeader>
