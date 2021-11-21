@@ -1,14 +1,11 @@
 import Head from "next/head";
-import { useState } from "react";
 import styled from "styled-components";
-import Countdown from "../components/Countdown";
-import DatePicker from "react-datepicker";
+import CountdownCard from "../components/cards/CountdownCard";
 import "react-datepicker/dist/react-datepicker.css";
-import Quotes from "../components/cards/QuotesCard";
+import { TodoOverview } from "../components/todo/TodoOverview";
 import QuotesCard from "../components/cards/QuotesCard";
 
 export default function Home() {
-  const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
       <Head>
@@ -18,17 +15,30 @@ export default function Home() {
       </Head>
       <main>
         <PufferPageTop />
-        <Countdown />
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
+        <HeadingStyled>Countdown</HeadingStyled>
+        <CountdownCard />
+        <HeadingStyled>Planner</HeadingStyled>
+        <TodoOverview />
         <QuotesCard />
+        <PufferPageBottom />
       </main>
     </div>
   );
 }
 
 const PufferPageTop = styled.div`
-  height: 10vh;
+  height: 15vh;
+`;
+
+const HeadingStyled = styled.h1`
+  font-family: "parisienne", "roboto";
+  font-size: 30px;
+  color: #5c5c5c;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+`;
+
+const PufferPageBottom = styled.div`
+  height: 15vh;
 `;
