@@ -15,6 +15,7 @@ export const CreateTitle = ({ onCreate }) => {
           type="text"
           name="newTitle"
           placeholder="enter vendor name"
+          autoComplete="off"
         />
       </label>
       <SubmitButtonStyle aria-label="save" type="submit" value="save" />

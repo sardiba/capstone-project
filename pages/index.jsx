@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CountdownCard from "../components/cards/CountdownCard";
 import "react-datepicker/dist/react-datepicker.css";
 import { TodoOverview } from "../components/todo/TodoOverview";
+import QuotesCard from "../components/cards/QuotesCard";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <PufferPageTop />
         <HeadingStyled>Countdown</HeadingStyled>
         <CountdownCard />
+        <QuotesCard />
         <HeadingStyled>Planner</HeadingStyled>
         <TodoOverview />
         <PufferPageBottom />
