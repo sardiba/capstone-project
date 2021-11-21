@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 export default function Quotes() {
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function updateQuote() {
     try {
+      setIsLoading(true);
       const response = await fetch("https://api.quotable.io/random");
       const { statusCode, statusMessage, ...data } = await response.json();
       if (!response.ok) throw new Error(`${statusCode} ${statusMessage}`);
       setData(data);
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       // If the API request failed, log the error to console and update state
       // so that the error will be reflected in the UI.
       console.error(error);
@@ -24,7 +28,16 @@ export default function Quotes() {
   }, []);
 
   // Do not render until the first quote is loaded
-  if (!data) return null;
+  if (isLoading)
+    return (
+      <>
+        {" "}
+        <CardHeader>Quotes of the Day</CardHeader>
+        <CardWrapper>
+          <LoadingText>"Loading.."</LoadingText>
+        </CardWrapper>{" "}
+      </>
+    );
 
   return (
     <>
@@ -36,6 +49,11 @@ export default function Quotes() {
     </>
   );
 }
+
+const LoadingText = styled.div`
+  text-align: center;
+  padding-top: 30px;
+`;
 
 const CardHeader = styled.h2`
   font-family: "parisienne", "roboto";
