@@ -17,9 +17,9 @@ export default function Home() {
         <PufferPageTop />
         <HeadingStyled>Countdown</HeadingStyled>
         <CountdownCard />
+        <QuotesCard />
         <HeadingStyled>Planner</HeadingStyled>
         <TodoOverview />
-        <QuotesCard />
         <PufferPageBottom />
       </main>
     </div>
