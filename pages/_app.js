@@ -1,7 +1,7 @@
 import "../styles/globals.css";
-import Header from "../components/layout/Header";
-import Navbar from "../components/layout/Navbar";
 import { VendorProvider } from "../context/VendorContext";
+import Header from "../components/layout/header";
+import Navbar from "../components/layout/Navbar";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,5 +1,5 @@
-import VendorCard from "../components/cards/VendorCard";
 import styled from "styled-components";
+import VendorCard from "./cards/VendorCard";
 
 export default function Vendor({ title, type, vendors }) {
   return (

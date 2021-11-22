@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import arrowLeft from "../public/icons/arrow-left.svg";
-import VendorCard from "../components/cards/VendorCard";
 import { useVendors } from "../context/VendorContext";
+import VendorCard from "../components/cards/VendorCard";
 
 export default function GalleryPhotography() {
   const [vendors, setVendors] = useVendors();
