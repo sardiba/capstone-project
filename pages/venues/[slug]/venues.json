@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "elbdeck-event-location",
+    "name": "ELBDECK EVENT LOCATION",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "Elbdeck Event Location picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "Elbdeck Event Location picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "Elbdeck Event Location picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "Elbdeck Event Location picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "ballrooms": [
+        {
+          "title": "Ballroom A",
+          "specification": "400 qm : up to 150 guests",
+          "priceWeekDay": 1250,
+          "priceWeekEnd": 2000
+        },
+        {
+          "title": "Ballroom B",
+          "specification": "700 qm : up to 300 guests",
+          "priceWeekDay": 2000,
+          "priceWeekEnd": 3000
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day rent. Event can be held between 9.00 - 22.00 CET/CEST",
+        "decoration, lighting and all logistic needed can be installed 6 hours before the event",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about rent terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  }
+]
