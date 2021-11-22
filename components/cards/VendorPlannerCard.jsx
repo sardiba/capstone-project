@@ -1,7 +1,7 @@
 import Image from "next/image";
 import editIcon from "../../public/icons/edit.svg";
 import { Line, Circle } from "rc-progress";
-import { CreateTitle } from "../cardTitle/createTitle";
+import { CreateTitle } from "../cardTitle/CreateTitle";
 import { todoCounter, todoCounterInString, TodoList } from "../todo/TodoList";
 import styled from "styled-components";
 import { useState } from "react";
