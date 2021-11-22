@@ -36,7 +36,7 @@ export function VendorProvider({ children }) {
       isBookmarked: false,
     },
     {
-      cardTitle: "THE PALACE- CONVENTION HALL",
+      cardTitle: "THE PALACE - CONVENTION HALL",
       cardImage: venuePic4,
       type: "venue",
       isBookmarked: false,

@@ -1,0 +1,282 @@
+[
+  {
+    "slug": "kila-photography",
+    "profilePicture": {
+      "src": "/images/photography1.jpeg",
+      "alt": "vendor picture"
+    },
+    "name": "KILA PHOTOGRAPHY",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "Kila Photography picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "Kila Photography picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "Kila Photography picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "Kila Photography picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "packages": [
+        {
+          "title": "Package A",
+          "specification": "1 photographer, 1 videographer",
+          "priceWeekDay": 2300,
+          "priceWeekEnd": 3000
+        },
+        {
+          "title": "Package B",
+          "specification": "2 photographers, 1 videographer",
+          "priceWeekDay": 3200,
+          "priceWeekEnd": 3900
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day service of 8 hours maximum.",
+        "all Packages include 200 photos digital, 1 video with maximum duration of 5 min, 2 photo albums 40 x 60cm hard cover, 1 USB Stick containing all 200 photos and 1 video",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "extra services such as more photos and or videos, extra hour (for event > 8 hours) can be booked by contacting our hotline",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  },
+  {
+    "slug": "anna-dittrich-fotograf",
+    "profilePicture": {
+      "src": "/images/photography2.jpeg",
+      "alt": "vendor picture"
+    },
+    "name": "ANNA DITTRICH FOTOGRAF",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "anna dittrich fotograf picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "anna dittrich fotograf picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "anna dittrich fotograf picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "anna dittrich fotograf picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "packages": [
+        {
+          "title": "Package A",
+          "specification": "1 photographer, 1 videographer",
+          "priceWeekDay": 2300,
+          "priceWeekEnd": 3000
+        },
+        {
+          "title": "Package B",
+          "specification": "2 photographers, 1 videographer",
+          "priceWeekDay": 3200,
+          "priceWeekEnd": 3900
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day service of 8 hours maximum.",
+        "all Packages include 200 photos digital, 1 video with maximum duration of 5 min, 2 photo albums 40 x 60cm hard cover, 1 USB Stick containing all 200 photos and 1 video",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "extra services such as more photos and or videos, extra hour (for event > 8 hours) can be booked by contacting our hotline",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  },
+  {
+    "slug": "alina-atzler-fotografie",
+    "profilePicture": {
+      "src": "/images/photography3.jpeg",
+      "alt": "vendor picture"
+    },
+    "name": "ALINA ATZLER FOTOGRAFIE",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "Alina Atzler Fotografie picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "Alina Atzler Fotografie picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "Alina Atzler Fotografie picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "Alina Atzler Fotografie picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "packages": [
+        {
+          "title": "Package A",
+          "specification": "1 photographer, 1 videographer",
+          "priceWeekDay": 2300,
+          "priceWeekEnd": 3000
+        },
+        {
+          "title": "Package B",
+          "specification": "2 photographers, 1 videographer",
+          "priceWeekDay": 3200,
+          "priceWeekEnd": 3900
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day service of 8 hours maximum.",
+        "all Packages include 200 photos digital, 1 video with maximum duration of 5 min, 2 photo albums 40 x 60cm hard cover, 1 USB Stick containing all 200 photos and 1 video",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "extra services such as more photos and or videos, extra hour (for event > 8 hours) can be booked by contacting our hotline",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  },
+  {
+    "slug": "alqisph-wedding-photo",
+    "profilePicture": {
+      "src": "/images/photography4.jpeg",
+      "alt": "vendor picture"
+    },
+    "name": "ALQISPH WEDDING PHOTO",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "Alqisph Wedding Photo picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "Alqisph Wedding Photo picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "Alqisph Wedding Photo picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "Alqisph Wedding Photo picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "packages": [
+        {
+          "title": "Package A",
+          "specification": "1 photographer, 1 videographer",
+          "priceWeekDay": 2300,
+          "priceWeekEnd": 3000
+        },
+        {
+          "title": "Package B",
+          "specification": "2 photographers, 1 videographer",
+          "priceWeekDay": 3200,
+          "priceWeekEnd": 3900
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day service of 8 hours maximum.",
+        "all Packages include 200 photos digital, 1 video with maximum duration of 5 min, 2 photo albums 40 x 60cm hard cover, 1 USB Stick containing all 200 photos and 1 video",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "extra services such as more photos and or videos, extra hour (for event > 8 hours) can be booked by contacting our hotline",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  },
+  {
+    "slug": "love-lense-photography",
+    "profilePicture": {
+      "src": "/images/photography5.jpeg",
+      "alt": "vendor picture"
+    },
+    "name": "LOVE LENSE PHOTOGRAPHY",
+    "images": [
+      {
+        "src": "/images/carouselVenue1Pic1.jpeg",
+        "alt": "Love Lense Photography picture 1"
+      },
+      {
+        "src": "/images/carouselVenue1Pic2.jpeg",
+        "alt": "Love Lense Photography picture 2"
+      },
+      {
+        "src": "/images/carouselVenue1Pic3.jpeg",
+        "alt": "Love Lense Photography picture 3"
+      },
+      {
+        "src": "/images/carouselVenue1Pic4.jpeg",
+        "alt": "Love Lense Photography picture 4"
+      }
+    ],
+    "contact": {
+      "phone": "tel:04012345",
+      "openingHours": "9.00-17.00",
+      "email": "mailto:vendorname@domain.com",
+      "address": "Vendor Street 29, 13579 Hamburg"
+    },
+    "priceList": {
+      "packages": [
+        {
+          "title": "Package A",
+          "specification": "1 photographer, 1 videographer",
+          "priceWeekDay": 2300,
+          "priceWeekEnd": 3000
+        },
+        {
+          "title": "Package B",
+          "specification": "2 photographers, 1 videographer",
+          "priceWeekDay": 3200,
+          "priceWeekEnd": 3900
+        }
+      ],
+      "additionalInfo": [
+        "all prices include full day service of 8 hours maximum.",
+        "all Packages include 200 photos digital, 1 video with maximum duration of 5 min, 2 photo albums 40 x 60cm hard cover, 1 USB Stick containing all 200 photos and 1 video",
+        "book a date = down payment 30% of total price (non refundable in case of a cancelation)",
+        "extra services such as more photos and or videos, extra hour (for event > 8 hours) can be booked by contacting our hotline",
+        "full payment has to be completed 7 days before event at the latest",
+        "for more details about terms and conditions, don't hesitate to contact our team"
+      ]
+    }
+  }
+]
