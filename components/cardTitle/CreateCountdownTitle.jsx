@@ -10,11 +10,12 @@ export const CreateCountdownTitle = ({ onCreate }) => {
       }}
     >
       <label>
-        <ScreenReaderOnly>Vendor name</ScreenReaderOnly>
+        <ScreenReaderOnly>Countdown name</ScreenReaderOnly>
         <TextInputStyled
           type="text"
           name="newTitle"
-          placeholder="enter vendor name"
+          placeholder="enter countdown name"
+          autoComplete="off"
         />
       </label>
       <SubmitButtonStyle type="submit" value="save" />

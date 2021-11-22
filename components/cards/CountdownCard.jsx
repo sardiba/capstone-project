@@ -110,8 +110,7 @@ const CountdownWrapper = styled.section`
   min-height: 120px;
   background-color: #e8e5df;
   border-radius: 7px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;

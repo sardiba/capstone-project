@@ -32,7 +32,6 @@ export default function Quotes() {
     return (
       <>
         {" "}
-        <CardHeader>Quotes of the Day</CardHeader>
         <CardWrapper>
           <LoadingText>"Loading.."</LoadingText>
         </CardWrapper>{" "}
@@ -41,7 +40,6 @@ export default function Quotes() {
 
   return (
     <>
-      <CardHeader>Quotes of the Day</CardHeader>
       <CardWrapper>
         <p>{data.content}</p>
         {data.author && <cite title="Source Title">{data.author}</cite>}
@@ -55,14 +53,6 @@ const LoadingText = styled.div`
   padding-top: 30px;
 `;
 
-const CardHeader = styled.h2`
-  font-family: "parisienne", "roboto";
-  font-size: 30px;
-  color: #5c5c5c;
-  text-align: center;
-  margin-top: 45px;
-`;
-
 const CardWrapper = styled.section`
   font-family: "open sans", "roboto";
   font-size: 10px;
@@ -71,7 +61,7 @@ const CardWrapper = styled.section`
   min-height: 100px;
   background-color: #e8e5df;
   border-radius: 7px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
