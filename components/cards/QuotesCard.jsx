@@ -33,7 +33,7 @@ export default function Quotes() {
       <>
         {" "}
         <CardWrapper>
-          <LoadingText>"Loading.."</LoadingText>
+          <LoadingText>&quot;Loading..&quot;</LoadingText>
         </CardWrapper>{" "}
       </>
     );

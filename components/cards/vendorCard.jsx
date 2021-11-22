@@ -4,6 +4,7 @@ import bookmarkLight from "../../public/icons/bookmark-light.svg";
 import bookmarkDark from "../../public/icons/bookmark-dark.svg";
 import Image from "next/image";
 import { useVendors } from "../../context/VendorContext";
+import Link from "next/link";
 
 export default function VendorCard({
   cardTitle,
@@ -34,9 +35,9 @@ export default function VendorCard({
       <div className="cardContentWrapper">
         <Image src={cardImage} alt="venue" height={100} width={100} />
         <div>
-          <a href="/priceListVenueElbdeckEventLocation">Price list</a>
-          <a href="/carouselVenueElbdeckEventLocation">Gallery</a>
-          <a href="/contactVenueElbdeckEventLocation">Contact</a>
+          <Link href="/priceListVenueElbdeckEventLocation">Price list</Link>
+          <Link href="/carouselVenueElbdeckEventLocation">Gallery</Link>
+          <Link href="/contactVenueElbdeckEventLocation">Contact</Link>
         </div>
       </div>
     </CardWrapper>

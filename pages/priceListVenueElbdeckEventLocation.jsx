@@ -52,8 +52,8 @@ export default function PriceListVenueElbdeckEventLocation() {
               full payment has to be completed 7 days before event at the latest
             </li>
             <li>
-              for more details about rent terms and conditions, don't hesitate
-              to contact our team
+              for more details about rent terms and conditions, don&apos;t
+              hesitate to contact our team
             </li>
           </ListStyled>
         </div>
