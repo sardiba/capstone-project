@@ -10,3 +10,28 @@ To see the complete app please click this link - [Dream Day Wedding Planner](htt
 ## Initial Design - Made with Figma
 <img width="929" alt="Screenshot 2021-11-16 at 18 35 08" src="https://user-images.githubusercontent.com/90189347/143003653-d3748f92-d8ee-4f3d-b3c6-2e6529a5af86.png">
 <img width="926" alt="Screenshot 2021-11-16 at 18 35 54" src="https://user-images.githubusercontent.com/90189347/143003670-660d5d48-819c-439e-a11a-55b5ef601da4.png">
+
+## Use This Template
+
+Click on __Use this template__ and clone the repo locally.
+
+Then run:
+```
+$ npm install
+```
+
+run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
