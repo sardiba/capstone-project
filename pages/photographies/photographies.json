@@ -3,9 +3,12 @@
     "slug": "kila-photography",
     "profilePicture": {
       "src": "/images/photography1.jpeg",
-      "alt": "vendor picture"
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
     },
     "name": "KILA PHOTOGRAPHY",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -59,9 +62,12 @@
     "slug": "anna-dittrich-fotograf",
     "profilePicture": {
       "src": "/images/photography2.jpeg",
-      "alt": "vendor picture"
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
     },
     "name": "ANNA DITTRICH FOTOGRAF",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -115,9 +121,12 @@
     "slug": "alina-atzler-fotografie",
     "profilePicture": {
       "src": "/images/photography3.jpeg",
-      "alt": "vendor picture"
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
     },
     "name": "ALINA ATZLER FOTOGRAFIE",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -171,9 +180,12 @@
     "slug": "alqisph-wedding-photo",
     "profilePicture": {
       "src": "/images/photography4.jpeg",
-      "alt": "vendor picture"
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
     },
     "name": "ALQISPH WEDDING PHOTO",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -227,9 +239,12 @@
     "slug": "love-lense-photography",
     "profilePicture": {
       "src": "/images/photography5.jpeg",
-      "alt": "vendor picture"
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
     },
     "name": "LOVE LENSE PHOTOGRAPHY",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",

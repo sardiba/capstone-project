@@ -18,14 +18,14 @@ export async function getStaticProps(context) {
   //     headers: { "Content-Type": "application/json", Accept: "application/json" },
   //   });
   const data = fs.readFileSync(
-    "/Users/sardiba/web/capstone-project/pages/venues/[slug]/venues.json",
+    "/Users/sardiba/web/capstone-project/pages/venues/venues.json",
     { encoding: "utf8" }
   );
   const venues = JSON.parse(data);
-  console.log("**VENUE HERE**", venues);
-  console.log(slug);
+  // console.log("**VENUE HERE**", venues);
+  // console.log(slug);
   const venue = venues.find((venue) => venue.slug === slug);
-  console.log("VENUE", venue);
+  // console.log("VENUE", venue);
 
   return {
     props: { venue }, // will be passed to the page component as props
@@ -33,8 +33,23 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+  const data = fs.readFileSync(
+    "/Users/sardiba/web/capstone-project/pages/venues/venues.json",
+    { encoding: "utf8" }
+  );
+  const venues = JSON.parse(data);
+
+  // console.log(data);
+
+  const paths = venues.map((venue) => {
+    return { params: { slug: venue.slug } };
+  });
+
   return {
-    paths: [{ params: { slug: "abc" } }],
+    paths, // path equal to paths: paths
+    // [
+    //   { params: { slug: "abc" } }
+    // ],
     fallback: true, // See the "fallback" section below
   };
 }

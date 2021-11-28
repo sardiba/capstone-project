@@ -1,8 +1,14 @@
 [
   {
     "slug": "elbdeck-event-location",
-    "profilePicture": { "src": "/images/venue1.jpg", "alt": "vendor picture" },
+    "profilePicture": {
+      "src": "/images/venue1.jpg",
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
+    },
     "name": "ELBDECK EVENT LOCATION",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -53,8 +59,14 @@
   },
   {
     "slug": "elbschmiede-altona",
-    "profilePicture": { "src": "/images/venue2.jpeg", "alt": "vendor picture" },
+    "profilePicture": {
+      "src": "/images/venue2.jpeg",
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
+    },
     "name": "ELBSCHMIEDE ALTONA",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -105,8 +117,14 @@
   },
   {
     "slug": "hamburg-white-house",
-    "profilePicture": { "src": "/images/venue3.jpeg", "alt": "vendor picture" },
+    "profilePicture": {
+      "src": "/images/venue3.jpeg",
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
+    },
     "name": "HAMBURG WHITE HOUSE",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",
@@ -157,8 +175,14 @@
   },
   {
     "slug": "the-palace-convention-hall",
-    "profilePicture": { "src": "/images/venue4.jpeg", "alt": "vendor picture" },
+    "profilePicture": {
+      "src": "/images/venue4.jpeg",
+      "alt": "vendor picture",
+      "height": "100",
+      "width": "100"
+    },
     "name": "THE PALACE - CONVENTION HALL",
+    "isBookmarked": "false",
     "images": [
       {
         "src": "/images/carouselVenue1Pic1.jpeg",

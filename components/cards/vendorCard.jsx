@@ -34,7 +34,7 @@ export default function VendorCard({
       <div className="cardContentWrapper">
         <Image src={cardImage} alt="venue" height={100} width={100} />
         <div>
-          <a href="/priceListVenueElbdeckEventLocation">Price list</a>
+          <a href={`/venues/price-list/${[slug]}`}>Price list</a>
           <a href="/carouselVenueElbdeckEventLocation">Gallery</a>
           <a href="/contactVenueElbdeckEventLocation">Contact</a>
         </div>

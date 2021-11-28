@@ -10,7 +10,7 @@ export default function Gallery() {
       </Head>
       <PufferPageTop />
       <HeadingStyle>Categories</HeadingStyle>
-      <LinkStyle href="/galleryVenue">Venue</LinkStyle>
+      <LinkStyle href="/venues">Venue</LinkStyle>
       <LinkStyle href="/galleryPhotography">Photography</LinkStyle>
       <LinkStyle>Catering and Wedding Cake</LinkStyle>
       <LinkStyle>Bridal and Makeup</LinkStyle>
